@@ -1,0 +1,89 @@
+@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import 'custom';
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#main-page {
+    margin: 0 auto; /* Centre le bloc horizontalement */
+    display: flex; /* Pour ajuster le contenu interne si besoin */
+    justify-content: center; /* Centre le contenu interne */
+    align-items: center; /* Centre verticalement le contenu si besoin */
+}
+.main-content {
+    flex: 1;
+    margin-top: 60px;  /* Décalage sous le header */
+    margin-bottom: 0px; /* Décalage au-dessus du footer */
+}
+/* Ajustement correct pour que le row prenne toute la place */
+.row.h-100 {
+    min-height: calc(100vh - 140px); /* 100% de la hauteur - (header 60px + footer 80px) */
+}
+
+footer{
+    position: relative;
+    padding: 15px;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Sidebar cachée par défaut */
+#sidebar {
+    display: none;
+}
+#sidebar.show {
+    display: block;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 200px;
+    transition: width 0.3s ease-in-out;
+    position: relative; /* Permet au bouton d’être positionné par rapport à la sidebar */
+}
+
+/* Sidebar réduite */
+#sidebar.collapsed {
+    width: 60px;
+}
+
+/* Bouton de toggle */
+#toggleSidebar {
+    position: absolute;
+    top: 8%;
+    right: -20px; /* Positionné à la droite de la sidebar */
+    transform: translateY(-50%);
+    background-color: var(--bs-primary); /* Fond en couleur primaire */
+    color: var(--bs-dark); /* Icône en dark */
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Cacher le texte dans les span lorsque la sidebar est réduite */
+#sidebar.collapsed .nav-item .textSideBar {
+    display: none !important;
+}
+
+/* L'icône reste visible */
+#sidebar.collapsed .nav-item i {
+    display: inline-block;
+}
