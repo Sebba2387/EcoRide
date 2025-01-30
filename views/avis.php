@@ -47,7 +47,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6 col-6">
-            <img src="/images/img_voyages.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+            <img src="images/img_voyages.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
         </div>
     </div>
 </div>   

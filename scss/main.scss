@@ -2,56 +2,41 @@
 @import 'custom';
 
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Assure que la page prend toute la hauteur de l'écran */
 }
 
 header {
     height: 60px;
-    width: 100%;
-    position: absolute;
-    top: 0;
+    margin-bottom: 10px;
 }
 
-#main-page {
-    margin: 0 auto; /* Centre le bloc horizontalement */
-    display: flex; /* Pour ajuster le contenu interne si besoin */
-    justify-content: center; /* Centre le contenu interne */
-    align-items: center; /* Centre verticalement le contenu si besoin */
-}
-.main-content {
-    flex: 1;
-    margin-top: 60px;  /* Décalage sous le header */
-    margin-bottom: 0px; /* Décalage au-dessus du footer */
-}
-/* Ajustement correct pour que le row prenne toute la place */
-.row.h-100 {
-    min-height: calc(100vh - 140px); /* 100% de la hauteur - (header 60px + footer 80px) */
+main {
+    flex: 1; /* Cela permet de faire en sorte que le main prenne toute la place disponible entre le header et le footer */
+    display: flex;
+    justify-content: flex-start; /* Aligne le contenu au début du main */
 }
 
-footer{
+footer {
     position: relative;
-    padding: 15px;
-    bottom: 0;
     width: 100%;
+    bottom: 0%;
+    margin-top: auto;
 }
-
-/* Sidebar cachée par défaut */
-#sidebar {
-    display: none;
-}
-#sidebar.show {
-    display: block;
+#form-compte {
+    margin-left: 200px; /* Décale le formulaire de 200px vers la droite */
 }
 
 /* Sidebar */
 #sidebar {
     width: 200px;
     transition: width 0.3s ease-in-out;
-    position: relative; /* Permet au bouton d’être positionné par rapport à la sidebar */
+    position: absolute; /* Reste collée à son emplacement */
+    top: 60px; /* Positionner la sidebar en dessous du header */
+    height: calc(100vh - 100px); /* Prend toute la hauteur entre le header et le footer */
 }
 
 /* Sidebar réduite */
@@ -65,8 +50,8 @@ footer{
     top: 8%;
     right: -20px; /* Positionné à la droite de la sidebar */
     transform: translateY(-50%);
-    background-color: var(--bs-primary); /* Fond en couleur primaire */
-    color: var(--bs-dark); /* Icône en dark */
+    background-color: var(--bs-primary);
+    color: var(--bs-dark);
     border: none;
     width: 40px;
     height: 40px;
@@ -87,3 +72,4 @@ footer{
 #sidebar.collapsed .nav-item i {
     display: inline-block;
 }
+

@@ -1,5 +1,3 @@
-<div class="container-fluid main-content">
-        <div class="row h-100">
             <!-- NAVBAR VERTICALE -->
             <nav id="sidebar" class="col-md-2 col-2 bg-dark text-white">
                 <button id="toggleSidebar" class="btn btn-primary text-dark">
@@ -12,25 +10,25 @@
                 <!-- Menu -->
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2 mt-2">
-                        <a href="/compte" class="sidebar-item nav-link text-white">
+                        <a href="views/auth/compte.php" class="sidebar-item nav-link text-white">
                             <i class="bi bi-person-fill fs-3"></i>
                             <span class="textSideBar d-none d-md-inline ms-3">Profil</span>
                         </a>
                     </li>
                     <li class="nav-item mb-2 mt-2">
-                        <a href="/vehicules" class="sidebar-item nav-link text-white">
+                        <a href="views/vehicules.php" class="sidebar-item nav-link text-white">
                             <i class="bi bi-car-front-fill fs-3"></i>
                             <span class="textSideBar d-none d-md-inline ms-3">Véhicules</span>
                         </a>
                     </li>
                     <li class="nav-item mb-2 mt-2">
-                        <a href="/voyages" class="sidebar-item nav-link text-white">
+                        <a href="views/voyages.php" class="sidebar-item nav-link text-white">
                             <i class="bi bi-signpost-2-fill fs-3"></i>
                             <span class="textSideBar d-none d-md-inline ms-3">Voyages</span>
                         </a>
                     </li>
                     <li class="nav-item mb-2 mt-2">
-                        <a href="/avis" class="sidebar-item nav-link text-white">
+                        <a href="views/avis.php" class="sidebar-item nav-link text-white">
                             <i class="bi bi-chat-right-text-fill fs-3"></i>
                             <span class="textSideBar d-none d-md-inline ms-3">Avis</span>
                         </a>
@@ -43,6 +41,3 @@
                     </li>
                 </ul>
             </nav>
-            
-        </div>
-    </div>

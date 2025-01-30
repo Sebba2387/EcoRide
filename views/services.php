@@ -1,6 +1,6 @@
 <div class="container-fluid main-content">
     <div class="row h-100">
-        <div class="col-md-5 offset-md-1 text-center text-md-start">   
+        <div class="col-md-5 mt-3 offset-md-1 text-center text-md-start">   
             <!-- Contenu principal (Colonne droite) -->
             <h2 class="fw-bold" style="color: #57F2AA;">Nos services</h2>
             <p class="text-dark text-justify" style="text-align: justify">
@@ -37,7 +37,7 @@
         </div>
         <!-- Contenu principal (Colonne droite) -->
         <div class="col-md-5 d-flex justify-content-center align-items-center text-center">
-            <img src="/images/img_presentation.jpg" alt="Image" class="img-fluid">
+            <img src="images/img_presentation.jpg" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>

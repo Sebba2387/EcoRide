@@ -10,19 +10,19 @@
             <div class="d-flex flex-column flex-md-row gap-2 w-100">
                 <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-geo-alt-fill" style="color: #213A40;"></i></span>
-                    <input type="text" class="form-control flex-grow-1" placeholder="Départ">
+                    <input type="text" class="form-control flex-grow-1" placeholder="Départ" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-geo-alt-fill" style="color: #213A40;"></i></span>
-                    <input type="text" class="form-control flex-grow-1" placeholder="Destination">
+                    <input type="text" class="form-control flex-grow-1" placeholder="Destination" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-calendar-week" style="color: #213A40;"></i></span>
-                    <input type="date" class="form-control flex-grow-1" placeholder="Date" >
+                    <input type="date" class="form-control flex-grow-1" placeholder="Date" required>
                 </div>
                 <div class="input-group">
                     <span class="input-group-text bg-white"><i class="bi bi-people-fill" style="color: #213A40;"></i></span>
-                    <input type="text" class="form-control flex-grow-1" placeholder="Passagers">
+                    <input type="number" min="1" class="form-control flex-grow-1" placeholder="Passagers" required>
                 </div>
                 <button type="submit" class="btn btn-dark w-100" style="color: #57F2AA;">Top départ !</button>
             </div>

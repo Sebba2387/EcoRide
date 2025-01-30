@@ -28,7 +28,7 @@
     <!-- Bloc Image aligné sous le formulaire -->
     <div class="row justify-content-center">
         <div class="col-md-6 col-12">
-            <img src="/images/img_connexion.jpg" alt="Image de connexion" class="img-fluid">
+            <img src="images/img_connexion.jpg" alt="Image de connexion" class="img-fluid">
         </div>
     </div>
 </div>

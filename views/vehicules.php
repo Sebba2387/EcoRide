@@ -1,21 +1,21 @@
-<div class="container d-flex flex-column justify-content-center mt-5">
+<div class="d-flex flex-column mb-2">
     <div class="row justify-content-center mb-4">
-        <div class="col-md-10 col-10">
+        <div class="col-md-9 offset-md-2 p-4 mb-5 shadow-sm rounded" style="background-color: #F2F2F2;">
             <div class="p-4 shadow-sm rounded" style="background-color: #F2F2F2;">
                 <form class="p-3 text-center rounded">
                     <!-- Champs "Modèle" et "Année" côte à côte / photo -->
                     <div class="row mb-2">
                         <div class="col-md-3 ml-1">
-                            <img src="/images/img_voiture_1.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
+                            <img src="images/img_voiture_1.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
                         </div>
                         <div class="col-md-3 ml-1">
-                            <img src="/images/img_voiture_2.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
+                            <img src="images/img_voiture_2.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
                         </div>
                         <div class="col-md-3 ml-1">
-                            <img src="/images/img_voiture_3.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
+                            <img src="images/img_voiture_3.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
                         </div>
                         <div class="col-md-3 ml-1">
-                            <img src="/images/img_voiture_4.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
+                            <img src="images/img_voiture_4.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
                         </div>
                     </div>
                     <!-- Champs "Modèle" et "Année" côte à côte / photo -->
@@ -115,7 +115,7 @@
     <!-- Bloc Image aligné sous le formulaire -->
     <div class="row justify-content-center">
         <div class="col-md-6 col-6">
-            <img src="/images/img_profil.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+            <img src="images/img_profil.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
         </div>
     </div>
 </div>

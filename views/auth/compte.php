@@ -1,8 +1,6 @@
-<div class="container d-flex flex-column justify-content-center mt-5">
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-10 col-10">
-            <div class="p-4 shadow-sm rounded" style="background-color: #F2F2F2;">
-                <form class="p-3 text-center rounded">
+<div class="d-flex flex-column mb-2">
+            <div class="col-md-9 offset-md-2 p-4 mb-5 shadow-sm rounded" style="background-color: #F2F2F2;">
+                <form class="mb-5 p-3 text-center rounded">
                     <h2 class="fw-bold" style="color: #57F2AA;">Leina DUPONT</h2>
                     <!-- Champs "identité" -->
                     <div class="row mb-2 justify-content-center">
@@ -102,7 +100,5 @@
                         </div>
                     </div>
                 </form>
-            </div>
         </div>
-    </div>
 </div>

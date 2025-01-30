@@ -7,40 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="scss/main.css">
     <title>Document</title>
 </head>
 <body>
-    <?php
+<?php
     // Démarrer la session si besoin
     session_start();
 
     // Inclure les fichiers nécessaires
     include_once "includes/header.php";
 
-    // Définir les routes
-    $routes = [
-        ""              => "views/home.php",
-        "presentation"  => "views/presentation.php",
-        "services"      => "views/services.php",
-        "contact"       => "views/contact.php",
-        "signin"        => "views/connexion.php",
-        "signup"        => "views/inscription.php",
-        "compte"        => "views/compte.php",
-        "vehicules"     => "views/vehicules.php",
-        "voyages"       => "views/voyages.php",
-        "avis"          => "views/avis.php",
-    ];
+    // Inclure le fichier de routage
+    include_once "routes/routage.php";
 
     // Récupérer l’URL demandée
     $page = isset($_GET['page']) ? $_GET['page'] : "";
 
-    // Vérifier si la page existe dans les routes
-    if (array_key_exists($page, $routes)) {
-        include $routes[$page];
-    } else {
-        include "views/404.php"; // Page introuvable
+    // Récupérer la page et l'indicateur de la sidebar
+    list($pageToInclude, $showSidebar) = getRoute($page);
+
+    // Si la page nécessite la sidebar, inclure la sidebar
+    if ($showSidebar) {
+        include_once "includes/sidebar.php";
     }
+
+    // Inclure la page correspondante
+    include_once $pageToInclude;  // Assurez-vous d'utiliser include_once pour éviter l'inclusion multiple
 
     // Inclure le footer
     include_once "includes/footer.php";

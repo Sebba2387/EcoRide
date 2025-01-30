@@ -115,7 +115,7 @@
         
         <!-- Colonne droite : Image -->
         <div class="col-md-6 text-center">
-            <img src="/images/img_inscription.png" alt="Image" class="img-fluid">
+            <img src="images/img_inscription.png" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>

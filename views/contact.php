@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row d-flex align-items-center">
         <!-- Colonne gauche : Texte -->
-        <div class="col-md-6 text-center text-md-start">
+        <div class="col-md-6 mt-3 text-center text-md-start">
             <h2 class="fw-bold" style="color: #57F2AA;">Contactez nous</h2>
             <p class="text-dark fst-italic" style="text-align: justify">
                 Une question, une suggestion ou besoin d'aide ? N'hésitez pas à nous écrire, notre équipe est là pour vous accompagner !
@@ -39,7 +39,7 @@
         
         <!-- Colonne droite : Image -->
         <div class="col-md-6 text-center">
-            <img src="/images/img_contact.jpg" alt="Image" class="img-fluid">
+            <img src="images/img_contact.jpg" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>
