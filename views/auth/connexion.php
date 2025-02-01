@@ -32,3 +32,4 @@
         </div>
     </div>
 </div>
+<script src="js/auth/signin.js"></script>

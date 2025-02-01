@@ -119,3 +119,4 @@
         </div>
     </div>
 </div>
+<script src="js/auth/signup.js"></script>

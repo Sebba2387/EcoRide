@@ -45,3 +45,4 @@
         </div>
     </div>
 </div>
+<script src="js/auth/editPassword.js"></script>
