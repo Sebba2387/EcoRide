@@ -1,6 +1,6 @@
 <div class="container d-flex flex-column justify-content-center mt-5">
     <!-- Bloc Formulaire de connexion -->
-    <div class="row justify-content-center mb-4">
+    <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-4 col-12">
             <div class="bg-primary p-4 shadow-sm rounded">
                 <form>
@@ -19,7 +19,7 @@
                     </div>
                     <button type="submit" class="btn btn-dark w-100 mt-2" id="btnSignin"  style="color: #57F2AA;">Connexion</button>
                     <div class="mb-3 mt-1 input-group">
-                        <a href="/signup" class="text-dark">Vous n'avez pas de compte ? Inscrivez-vous ici</a>
+                        <a href="index.php?page=signup" class="text-dark">Vous n'avez pas de compte ? Inscrivez-vous ici</a>
                     </div>
                 </form>
             </div>

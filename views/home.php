@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <!-- Texte aligné -->
     <div class="my-4 text-center">
         <h1 class="text-primary fw-bold">Voyagez vert, partagez mieux !</h1>

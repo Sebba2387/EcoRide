@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex flex-column justify-content-center mt-5">
     <div class="row justify-content-center mb-4">
-        <div class="col-md-10 col-10">
+        <div class="col-md-10 col-10 mt-5 mb-5 offset-md-3">
             <table class="table table-bordered">
                 <thead>
                     <tr>

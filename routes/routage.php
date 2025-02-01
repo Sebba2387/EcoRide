@@ -10,6 +10,7 @@ function getRoute($page) {
         "contact"       => ["views/contact.php", false],
         "signin"        => ["views/auth/connexion.php", false],
         "signup"        => ["views/auth/inscription.php", false],
+        "editPassword"        => ["views/auth/editPassword.php", false],
         "compte"        => ["views/auth/compte.php", true],
         "vehicules"     => ["views/vehicules.php", true],
         "voyages"       => ["views/voyages.php", true],

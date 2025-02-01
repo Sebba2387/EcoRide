@@ -10,33 +10,39 @@ body {
 }
 
 header {
+    position: fixed;
     height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     margin-bottom: 10px;
-}
-
-main {
-    flex: 1; /* Cela permet de faire en sorte que le main prenne toute la place disponible entre le header et le footer */
-    display: flex;
-    justify-content: flex-start; /* Aligne le contenu au début du main */
 }
 
 footer {
     position: relative;
     width: 100%;
-    bottom: 0%;
     margin-top: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 }
-#form-compte {
-    margin-left: 200px; /* Décale le formulaire de 200px vers la droite */
-}
+// .main-container {
+//     display: flex;
+//     flex: 1;
+//     margin-top: 60px; /* Décalage sous le header */
+//     margin-bottom: 60px; /* Décalage au-dessus du footer */
+//     height: calc(100vh - 120px); /* Hauteur entre header et footer */
+// }
 
 /* Sidebar */
 #sidebar {
+    position: fixed; /* Reste collée à son emplacement */
     width: 200px;
     transition: width 0.3s ease-in-out;
-    position: absolute; /* Reste collée à son emplacement */
+    left:0;
     top: 60px; /* Positionner la sidebar en dessous du header */
-    height: calc(100vh - 100px); /* Prend toute la hauteur entre le header et le footer */
+    height: 100%; /* Prend toute la hauteur entre le header et le footer */
 }
 
 /* Sidebar réduite */
@@ -72,4 +78,3 @@ footer {
 #sidebar.collapsed .nav-item i {
     display: inline-block;
 }
-

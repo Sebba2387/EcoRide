@@ -1,12 +1,12 @@
-<div class="container mt-5">
-    <div class="row d-flex align-items-center mb-5">
+<div class="container mt-3 mb-3">
+    <div class="row d-flex align-items-center mb-2">
         <!-- Colonne gauche : Texte -->
-        <div class="col-md-6 text-center text-md-start">
-            <h2 class="fw-bold" style="color: #57F2AA;">Devenez EcoRider !</h2>
+        <div class="col-md-6 text-center text-md-start mt-3">
+            <h2 class="fw-bold mt-5" style="color: #57F2AA;">Devenez EcoRider !</h2>
             <p class="text-dark fst-italic" style="text-align: justify">
                 Profitez de trajets partagés, réduisez votre empreinte carbone et économisez.<br>Inscrivez-vous dès maintenant et faites un geste pour la planète !
             </p>
-            <a href="/signin">Avez-vous déjà un compte ? Connectez-vous ici</a>
+            <a href="index.php?page=signin">Avez-vous déjà un compte ? Connectez-vous ici</a>
             <div class="container mt-2">
                 <form class="p-3 border border-2 border-primary bg-primary rounded" id="SignupForm">
                     <!-- Champs "Nom" et "Prénom" côte à côte -->

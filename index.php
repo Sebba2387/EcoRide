@@ -40,14 +40,10 @@
     // Inclure le footer
     include_once "includes/footer.php";
     ?>
-
-    
-    <main id="main-page" class="col-md-10 col-10">
+    <main id="main-page" class="col-10 col-md-9 ">
         <!-- Le contenu de la page sera injecté ici -->
     </main>
-
     <script src="js/script.js"></script>
-    <script type="module" src="router/router.js"></script>
     <!-- Installation du strcipt JS pour Bootstrap -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

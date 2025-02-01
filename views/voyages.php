@@ -1,7 +1,7 @@
 <div class="container d-flex flex-column justify-content-center mt-5">
     <div class="row justify-content-center mb-4">
-        <div class="col-md-10 col-10">
-            <div class="p-4 shadow-sm rounded" style="background-color: #F2F2F2;">
+        <div class="col-md-10 col-10 mt-5 mb-5">
+            <div class="offset-md-3 p-4 shadow-sm rounded" style="background-color: #F2F2F2;">
                 <form class="p-3 text-center rounded">
                     <!-- Champs "Ville Départ" et "Ville Arrivée" côte à côte -->
                     <div class="row mb-2">
