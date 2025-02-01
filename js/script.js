@@ -91,7 +91,9 @@ function showAndHideElementsForRoles(){
     })
 }
 
-
+window.onload = function() {
+    showAndHideElementsForRoles();
+};
 //SIDEBAR
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.getElementById("toggleSidebar");

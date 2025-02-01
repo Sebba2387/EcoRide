@@ -11,16 +11,22 @@
                     <!-- Champs "Nom" et "Prénom" côte à côte -->
                     <div class="row mb-3">
                         <div class="col-md-6 py-3">
-                            <input type="text" class="form-control" id="nom" placeholder="Nom*" required>
+                            <input type="text" class="form-control" id="NomInput" placeholder="Nom*" required>
+                            <div class="invalid-feedback">
+                                Il est important de renseigner votre nom
+                            </div>
                         </div>
                         <div class="col-md-6 py-3">
-                            <input type="email" class="form-control" id="email" placeholder="Email*" required>
+                            <input type="email" class="form-control" id="EmailInput" placeholder="Email*" required>
+                            <div class="invalid-feedback">
+                                Le mail n'est pas au bon format
+                            </div>
                         </div>
                     </div>
                     <!-- Champ de sélection -->
                     <div class="mb-3 py-3">
                         <select class="form-select" id="typeDemande" required>
-                            <option selected disabled>Type de demander</option>
+                            <option selected disabled>Quel type de demande avez-vous ?</option>
                             <option value="1">Demande de renseignement</option>
                             <option value="2">Réclamation</option>
                             <option value="3">suggestion</option>
@@ -29,10 +35,10 @@
                     </div>
                     <!-- Champ de texte pour message -->
                     <div class="mb-3 py-3">
-                        <textarea class="form-control" id="message" rows="6" placeholder="Votre message..." required></textarea>
+                        <textarea class="form-control" id="messageText" rows="6" placeholder="Votre message..." required></textarea>
                     </div>
                     <!-- Bouton de soumission -->
-                    <button type="submit" class="btn btn-dark w-100" style="color: #57F2AA;">Envoyer</button>
+                    <button type="submit" class="btn btn-dark w-100" id="envoiBtn" style="color: #57F2AA;">Envoyer</button>
                 </form>
             </div>
         </div>
@@ -43,3 +49,4 @@
         </div>
     </div>
 </div>
+<script src="js/contact.js"></script>
