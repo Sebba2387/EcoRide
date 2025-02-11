@@ -20,8 +20,15 @@ FrontEnd
     Améliorer les pages (voyages, avis) ❌
 Backend
 1. Connexion ✅
-2. Déconnexion
-3. Gestion des affichage selon le rôle (conversion en PHP)
+2. Déconnexion ✅
+3. Inscription ✅
+4. Profil (Appel des données 'utilisateur')
+5. Mise à jour du Profil
+
+
+
+
+22. Gestion des affichage selon le rôle (conversion en PHP)
 
 
 # Installation
