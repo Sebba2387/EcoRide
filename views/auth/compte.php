@@ -4,10 +4,11 @@
             <div class="shadow-sm rounded" style="background-color: #F2F2F2;">
                 <form class="mb-5 p-3 rounded">
                     <h2 class="fw-bold" style="color: #57F2AA;">Leina DUPONT</h2>
+                    
                     <!-- Champs "identité" -->
                     <div class="row mb-2 justify-content-center">
                         <div class="col-md-3 py-2">
-                            <input type="number" class="form-control" id="age" placeholder="Âge*" required>
+                            <input type="date" class="form-control" id="date" placeholder="date de naissance*" required>
                         </div>
                         <div class="col-md-3 py-2">
                             <input type="email" class="form-control" id="email" placeholder="Email*" required>
@@ -101,6 +102,7 @@
                                 <button type="submit" class="btn btn-dark mt-3 py-2" style="color: #57F2AA;">Enregistrer</button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>

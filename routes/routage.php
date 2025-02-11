@@ -12,8 +12,8 @@ function getRoute($page) {
         "signup"        => ["views/auth/inscription.php", false],
         "editPassword"        => ["views/auth/editPassword.php", false],
         "compte"        => ["views/auth/compte.php", true],
-        "vehicules"     => ["views/vehicules.php", true],
-        "voyages"       => ["views/voyages.php", true],
+        "voitures"     => ["views/voitures.php", true],
+        "covoiturages"       => ["views/covoiturages.php", true],
         "avis"          => ["views/avis.php", true],
     ];
 

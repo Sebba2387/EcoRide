@@ -26,7 +26,7 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="index.php?page=signup" data-show="disconnected">Inscription</a></li>
                                 <li><a class="dropdown-item" href="index.php?page=signin" data-show="disconnected">Connexion</a></li>
-                                <li><button class="dropdown-item" href="index.php" id="btnSignout" data-show="connected">Déconnexion</button></li>
+                                <li><button class="dropdown-item" href="index.php?" id="btnSignout" data-show="connected">Déconnexion</button></li>
                                 <li><a class="dropdown-item" href="index.php?page=compte" data-show="connected">Mon compte</a></li>
 
                             </ul>

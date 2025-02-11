@@ -18,15 +18,15 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=vehicules" class="sidebar-item nav-link text-white">
+                    <a href="index.php?page=voitures" class="sidebar-item nav-link text-white">
                         <i class="bi bi-car-front-fill fs-3"></i>
-                        <span class="textSideBar d-none d-md-inline ms-3">Véhicules</span>
+                        <span class="textSideBar d-none d-md-inline ms-3">Voitures</span>
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=voyages" class="sidebar-item nav-link text-white">
+                    <a href="index.php?page=covoiturages" class="sidebar-item nav-link text-white">
                         <i class="bi bi-signpost-2-fill fs-3"></i>
-                        <span class="textSideBar d-none d-md-inline ms-3">Voyages</span>
+                        <span class="textSideBar d-none d-md-inline ms-3">Covoiturages</span>
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">

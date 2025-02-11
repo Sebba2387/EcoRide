@@ -3,16 +3,16 @@
     <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-4 col-12">
             <div class="bg-primary p-4 shadow-sm rounded">
-                <form>
+                <form action="../backend/controllers/login.php" method="POST">
                     <!-- Champ Email avec icône -->
                     <div class="mb-3 input-group">
                         <span class="input-group-text" id="email-icon"><i class="bi bi-envelope-fill"></i></span>
-                        <input type="email" class="form-control" id="EmailInput" placeholder="Entrez votre email" aria-describedby="email-icon" required>
+                        <input type="email" class="form-control" name="email" id="EmailInput" placeholder="Entrez votre email" aria-describedby="email-icon" required>
                     </div>
                     <!-- Champ Mot de passe avec icône -->
                     <div class="mb-3 input-group">
                         <span class="input-group-text" id="password-icon"><i class="bi bi-lock-fill"></i></span>
-                        <input type="password" class="form-control" id="PasswordInput" placeholder="Entrez votre mot de passe" aria-describedby="password-icon" required>
+                        <input type="password" class="form-control" name="password" id="PasswordInput" placeholder="Entrez votre mot de passe" aria-describedby="password-icon" required>
                         <div class="invalid-feedback">
                             Le mail et le mot de passe ne correspondent pas 
                         </div>

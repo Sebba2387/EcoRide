@@ -33,7 +33,3 @@
         <img src="images/img_accueil.jpg" alt="Image centrée" class="img-fluid" style="max-width: 100%; max-height: 400px;">
     </div>
 </div>
-
-
-
-
