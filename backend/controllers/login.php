@@ -26,16 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['role_id'] = $user['role_id'];
 
             // Redirection vers le dashboard
-            header("Location: ../../views/compte.php");
+            header("Location: ../../index.php?page=compte");
             exit();
         } else {
-            $_SESSION['message'] = "Mot de passe incorrect.";
-            header("Location: ../../views/connexion.php");
+            $_SESSION['message'] = "Nom d'utilisateur ou Mot de passe incorrect.";
+            header("Location: ../../index.php?page=signin");
             exit();
         }
     } else {
         $_SESSION['message'] = "Utilisateur non trouvé.";
-        header("Location: ../../views/connexion.php");
+        header("Location: ../../index.php?page=signin");
         exit();
     }
 }

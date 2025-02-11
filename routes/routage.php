@@ -1,6 +1,5 @@
 <?php
 // routes/routage.php
-
 function getRoute($page) {
     // Tableau des routes
     $routes = [
