@@ -1,111 +1,66 @@
+<?php
+require_once 'backend/database/db.php';  // Connexion à la base de données
+require_once 'backend/models/user.php';  // Modèle User
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$userModel = new User($conn);
+$user = $userModel->getUserById($_SESSION['utilisateur_id']);
+?>
 <div class="container d-flex flex-column offset-md-2 mt-5">
     <div class="row justify-content-center mb-4">
         <div class="col-md-10 col-10 mt-5 mb-5">
             <div class="shadow-sm rounded" style="background-color: #F2F2F2;">
-                <form class="mb-5 p-3 rounded">
-                    <h2 class="fw-bold" style="color: #57F2AA;">Leina DUPONT</h2>
-                    
-                    <!-- Champs "identité" -->
+                <form class="mb-5 p-3 rounded" action="backend/controllers/compteController.php" method="POST">
+                    <div class="col-md-3 py-2">
+                            <input type="text" class="form-control bg-transparent border-0" name="pseudo" id="pseudo" placeholder="Pseudo" style="color: #57F2AA; font-weight: bold; font-size: 2.5rem;"  value="<?= htmlspecialchars($user['pseudo'])?>" required>
+                    </div>
+                    <!-- Champs identité & contact -->
                     <div class="row mb-2 justify-content-center">
                         <div class="col-md-3 py-2">
-                            <input type="date" class="form-control" id="date" placeholder="date de naissance*" required>
+                            <label for="nom" class="form-label text-secondary">Nom</label>
+                            <input type="text" class="form-control" name="nom" id="nom" placeholder="nom" value="<?= htmlspecialchars($user['nom'])?>" required>
                         </div>
                         <div class="col-md-3 py-2">
-                            <input type="email" class="form-control" id="email" placeholder="Email*" required>
+                            <label for="prenom" class="form-label text-secondary">Prénom</label>
+                            <input type="text" class="form-control" name="prenom" id="prenom" placeholder="prenom" value="<?= htmlspecialchars($user['prenom'])?>" required>
                         </div>
                         <div class="col-md-3 py-2">
-                            <input type="password" class="form-control" id="mdp" placeholder="*********" required>
+                            <label for="email" class="form-label text-secondary">Adresse email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="email" value="<?= htmlspecialchars($user['email'])?>" required>
                         </div>
                         <div class="col-md-3 py-2">
-                            <input type="tel" class="form-control" id="telephone" placeholder="Téléphone" required>
+                            <label for="telephone" class="form-label text-secondary">Téléphone</label>
+                            <input type="telephone" class="form-control" name="telephone" id="telephone" placeholder="Téléphone" value="<?= htmlspecialchars($user['telephone'])?>" required>
                         </div>
                     </div>
                     <!-- Champs "Permis"-->
                     <div class="row mb-2 justify-content-center">
                         <div class="col-md-3 py-2">
-                            <input type="text" class="form-control" id="adresse" placeholder="Adresse*" required>
+                            <label for="adresse" class="form-label text-secondary">Adresse</label>
+                            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" value="<?= htmlspecialchars($user['adresse'])?>" required>
                         </div>
                         <div class="col-md-3 py-2">
-                            <input type="text" class="form-control" id="permis" placeholder="type de permis" required>
+                            <label for="date_naissance" class="form-label text-secondary">Date de naissance</label>
+                            <input type="date" class="form-control" name="date_naissance" id="date_naissance" placeholder="Date de naissance" value="<?= htmlspecialchars($user['date_naissance'])?>" required>
                         </div>
-                        <div class="col-md-3 py-2">
-                            <input type="date" class="form-control" id="permisDate" placeholder="Date de permis" required>
-                        </div>
-                        <div class="col-md-3 py-2">
-                            <input type="number" class="form-control" id="numeroPermis" placeholder="Numéro de permis" required>
-                        </div>
-                    </div>
-                    <!-- Champs "Permis"-->
-                    <div class="row mb-2 justify-content-center">
-                        <div class="col-md-10 py-2 mb-2">
+                        <div class="col-md-3 py-2 d-flex align-items-center">
                             <a href="index.php?page=editPassword">Modifier le mot de passe ?</a>
                         </div>
-                        <div class="col-md-10 py-2 mb-2">
-                            <textarea class="form-control w-100" rows="4" id="message" placeholder="Votre message" aria-describedby="message-addon"></textarea>
+                    </div>
+                    <div class="row mb-2 justify-content-center">
+                        <div class="col-md-2 py-2 justify-content-center">
+                            <button type="submit" class="btn btn-dark mt-3 py-2" name="update" style="color: #57F2AA;">Enregistrer</button>
                         </div>
                     </div>
-                    <!-- Champ de sélection "Genre" et "Cigarette" côte à côte -->
-                    <div class="row mb-2 justify-content-center">
-                        <div class="col-md-5 py-2">
-                            <select class="form-select" id="genre" required>
-                                <option selected disabled>Genre</option>
-                                <option value="1">Homme</option>
-                                <option value="2">Femme</option>
-                                <option value="3">Non spécifié</option>
-                            </select>
-                        </div>
-                        <div class="col-md-5 py-2">
-                            <select class="form-select" id="cigarette" required>
-                                <option selected disabled>Êtes-vous fumeur ?</option>
-                                <option value="1">Les fumeurs sont les bienvenus, aucune gêne pour moi.</option>
-                                <option value="2">Je préfère éviter, mais fumer avant ou pendant les pauses est possible.</option>
-                                <option value="3">Je ne tolère pas l'odeur de cigarette dans la voiture.</option>
-                            </select>
-                        </div>
-                        <!-- Champ de sélection "Musique" et "Silence" côte à côte -->
-                        <div class="row mb-2 justify-content-center">
-                            <div class="col-md-5 py-2">
-                                <select class="form-select" id="musique" required>
-                                    <option selected disabled>Voyagez-vous en musique ?</option>
-                                    <option value="1">Je suis ouverte à tous les styles musicaux, ambiance garantie !</option>
-                                    <option value="2">Un peu de musique, c'est sympa, mais à volume modéré.</option>
-                                    <option value="3">Je préfère un trajet calme, sans musique.</option>
-                                </select>
-                            </div>
-                            <div class="col-md-5 py-2">
-                                <select class="form-select" id="silence" required>
-                                    <option selected disabled>Voyagez-vous en silence ?</option>
-                                    <option value="1">J'apprécie de discuter pendant le trajet, n'hésitez pas à engager la conversation !</option>
-                                    <option value="2">Je tolère les pauses silencieuses, mais je suis ouvert aux discussions légères.</option>
-                                    <option value="3">Je préfère voyager en silence, sans conversation.</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Champ de sélection "Animaux" et "Préférence passager" côte à côte -->
-                        <div class="row mb-2 justify-content-center">
-                            <div class="col-md-5 py-2">
-                                <select class="form-select" id="aniamux" required>
-                                    <option selected disabled>Êtes-vous ami des animaux ?</option>
-                                    <option value="1">Les animaux sont les bienvenus à bord, je les adore !</option>
-                                    <option value="2">Animaux acceptés si bien installés et propres.</option>
-                                    <option value="3">Je ne peux pas accepter d'animaux dans ma voiture.</option>
-                                </select>
-                            </div>
-                            <div class="col-md-5 py-2">
-                                <select class="form-select" id="passager_preference" required>
-                                    <option selected disabled>Préférez-vous voyager entre femmes ?</option>
-                                    <option value="1">Oui</option>
-                                    <option value="2">Non</option>
-                                </select>
-                            </div>
-                            <div class="col-md-5 py-2">
-                                <button type="submit" class="btn btn-dark mt-3 py-2" style="color: #57F2AA;">Enregistrer</button>
-                            </div>
-                        </div>
-                        
-                    </form>
-                </div>
+                </form>
+            </div>
+            <div class="col-md-10 col-10 text-center">
+                <img src="images/img_profil.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
             </div>
         </div>
     </div>
 </div>
+

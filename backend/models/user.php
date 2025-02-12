@@ -48,7 +48,7 @@ class User {
 
     // Récupérer les infos de l'utilisateur connecté
     public function getUserById($utilisateur_id) {
-        $query = "SELECT nom, prenom, email, pseudo FROM utilisateur WHERE utilisateur_id = ?";
+        $query = "SELECT nom, prenom, email, pseudo, telephone, adresse, date_naissance FROM utilisateur WHERE utilisateur_id = ?";
         if ($stmt = $this->conn->prepare($query)) {
             $stmt->bind_param("i", $utilisateur_id); // "i" car c'est un entier (INT)
             $stmt->execute();
@@ -62,10 +62,10 @@ class User {
     }
 
     // Modifier les infos de l'utilisateur à partir du dashboard
-    public function updateUser($utilisateur_id, $nom, $prenom, $pseudo, $email) {
-        $query = "UPDATE utilisateur SET nom = ?, prenom = ?, pseudo = ?, email = ? WHERE utilisateur_id = ?";
+    public function updateUser($utilisateur_id, $nom, $prenom, $pseudo, $email, $telephone, $adresse, $date_naissance) {
+        $query = "UPDATE utilisateur SET nom = ?, prenom = ?, pseudo = ?, email = ?, telephone = ?, adresse = ?, date_naissance = ? WHERE utilisateur_id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssssi", $nom, $prenom, $pseudo, $email, $utilisateur_id);
+        $stmt->bind_param("sssssssi", $nom, $prenom, $pseudo, $email, $telephone, $adresse, $date_naissance, $utilisateur_id);
 
         return $stmt->execute();
     }

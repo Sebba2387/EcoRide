@@ -12035,4 +12035,11 @@ footer {
 /* L'icône reste visible */
 #sidebar.collapsed .nav-item i {
   display: inline-block;
+}
+
+/* Formulaire Compte*/
+#pseudo {
+  color: #57F2AA;
+  font-weight: bold;
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */
