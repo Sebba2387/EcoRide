@@ -22,13 +22,35 @@ Backend
 1. Connexion ✅
 2. Déconnexion ✅
 3. Inscription ✅
-4. Profil (Appel des données 'utilisateur')
-5. Mise à jour du Profil
+4. Profil (Appel des données 'utilisateur')✅
+5. Mise à jour du Profil ✅
+6. Modification du mot de passe
+7. Ajouter d'une voiture 
+8. Supprimer d'une voiture 
+9. Mise à jour d'une voiture
+10. Ajout d'un covoiturage
+11. Modifier d'un covoiturage
+12. Supprimer d'un covoiturage
+13. Rechercher les covoiturages
+14. Réserver un covoiturage
+15. Annuler une réservation
+16. Refuser une réservation
+17. Accepter une réservation
+18. Ajouter un avis
+19. Afficher les avis
+20. Ajout profil Admin
+21. Ajout profil Employé
+22. Profil Admin & Employé : Afficher les utilisateurs
+23. Profil Admin & Employé : Supprimer les utilisateurs
+24. Profil Admin & Employé : Afficher les covoiturages
+25. Profil Admin & Employé : Supprimer les covoiturages
+26. Profil Admin : Afficher les employés
+27. Profil Admin : Supprimer les employés
 
-
-
-
-22. Gestion des affichage selon le rôle (conversion en PHP)
+99. Ajout de la photo de Profil
+99. Ajout de la photo de la voiture
+99. Gestion des affichage selon le rôle (conversion en PHP)
+99. Gestion de message de contact
 
 
 # Installation

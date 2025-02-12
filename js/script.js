@@ -91,13 +91,18 @@
 //     })
 // }
 
-window.onload = function() {
-    showAndHideElementsForRoles();
-};
+// window.onload = function() {
+//     showAndHideElementsForRoles();
+// };
+
 //SIDEBAR
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.getElementById("toggleSidebar");
 const icon = toggleBtn.querySelector("i");
+
+// Ferme la sidebar par défaut au chargement de la page
+sidebar.classList.add("collapsed");
+icon.classList.replace("bi-chevron-double-left", "bi-chevron-double-right");
 
 toggleBtn.addEventListener("click", () => {
     // Toggle la classe collapsed
