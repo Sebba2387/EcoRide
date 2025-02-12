@@ -63,8 +63,8 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
                         <td><?= $voiture['couleur']; ?></td>
                         <td><?= $voiture['date_immatriculation']; ?></td>
                         <td>
-                            <a href="index.php?page=editVoitures&id=<?= $voiture['voiture_id']; ?>">Modifier</a>
-                            <a href="backend/controllers/voitureController.php?delete=<?= $voiture['voiture_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');">Supprimer</a>
+                            <a class="btn btn-warning text-white" href="index.php?page=editVoitures&id=<?= $voiture['voiture_id']; ?>">Modifier</a>
+                            <a class="btn btn-danger" href="backend/controllers/voitureController.php?delete=<?= $voiture['voiture_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');">Supprimer</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
