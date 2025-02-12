@@ -45,7 +45,7 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
                     </div>
                 </div>
             </form>
-            <h3 style="color: #57F2AA; font-weight: bold; font-size: 2rem;" >Voitures enregistrées</h3>
+            <h3 style="color: #57F2AA; font-weight: bold; font-size: 2rem;" >Mes voitures</h3>
             <table class="custom-table">
                 <tr>
                     <th>Modèle</th>
@@ -53,7 +53,7 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
                     <th>Énergie</th>
                     <th>Couleur</th>
                     <th>Date d'immatriculation</th>
-                    <th>Actions</th>
+                    <th class="text-center">Actions</th>
                 </tr>
                 <?php foreach ($voitures as $voiture) : ?>
                     <tr>

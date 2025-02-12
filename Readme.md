@@ -28,11 +28,11 @@ Backend
 7. Ajouter d'une voiture ✅
 8. Supprimer d'une voiture ✅
 9. Mise à jour d'une voiture ✅
-10. Ajout d'un covoiturage
-11. Modifier d'un covoiturage
-12. Supprimer d'un covoiturage
+10. Ajout d'un covoiturage ✅
+11. Modifier d'un covoiturage ✅
+12. Annuler d'un covoiturage ✅
 13. Rechercher les covoiturages
-14. Réserver un covoiturage
+14. Faire une réservation
 15. Annuler une réservation
 16. Refuser une réservation
 17. Accepter une réservation
@@ -48,6 +48,7 @@ Backend
 27. Profil Admin : Supprimer les employés
 
 
+99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !
 99. Ajout de la photo de Profil
 99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu, 
 99. Ajout de la photo de la voiture
