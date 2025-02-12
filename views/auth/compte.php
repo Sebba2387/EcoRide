@@ -38,19 +38,19 @@ $user = $userModel->getUserById($_SESSION['utilisateur_id']);
                     </div>
                     <!-- Champs "Permis"-->
                     <div class="row mb-2 justify-content-center">
-                        <div class="col-md-3 py-2">
+                        <div class="col-md-3 py-1">
                             <label for="adresse" class="form-label text-secondary">Adresse</label>
                             <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse" value="<?= htmlspecialchars($user['adresse'])?>" required>
                         </div>
-                        <div class="col-md-3 py-2">
+                        <div class="col-md-3 py-1">
                             <label for="date_naissance" class="form-label text-secondary">Date de naissance</label>
                             <input type="date" class="form-control" name="date_naissance" id="date_naissance" placeholder="Date de naissance" value="<?= htmlspecialchars($user['date_naissance'])?>" required>
                         </div>
-                        <div class="col-md-3 py-2 d-flex align-items-center">
-                            <a href="index.php?page=editPassword">Modifier le mot de passe ?</a>
+                        <div class="col-md-3 py-1 d-flex">
+                            <a href="index.php?page=editPassword" class="btn btn-primary fw-bold text-white rounded w-100 text-center align-self-end" >Modifier le mot de passe ?</a>
                         </div>
                     </div>
-                    <div class="row mb-2 justify-content-center">
+                    <div class="row mb-1 justify-content-center">
                         <div class="col-md-2 py-2 justify-content-center">
                             <button type="submit" class="btn btn-dark mt-3 py-2" name="update" style="color: #57F2AA;">Enregistrer</button>
                         </div>

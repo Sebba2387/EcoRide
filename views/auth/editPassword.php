@@ -1,39 +1,38 @@
+<?php
+if (!isset($_SESSION['utilisateur_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+if (isset($_SESSION['error'])) {
+    echo "<p style='color: red'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);
+}
+
+if (isset($_SESSION['success'])) {
+    echo "<p style='color: green'>" . $_SESSION['success'] . "</p>";
+    unset($_SESSION['success']);
+}
+?>
 <div class="container d-flex flex-column justify-content-center mt-5">
     <!-- Bloc Formulaire de connexion -->
     <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-4 col-12">
             <div class="bg-primary p-4 shadow-sm rounded">
-                <form>
-                    <!-- Champ Email avec icône -->
+                <form action="backend/controllers/userController.php" method="POST">
                     <div class="mb-3 input-group">
-                        <span class="input-group-text" id="email-icon"><i class="bi bi-envelope-fill"></i></span>
-                        <input type="email" class="form-control" id="EmailInput" placeholder="Entrez votre email" aria-describedby="email-icon" required>
-                        <div class="invalid-feedback">
-                            Le mail n'est pas au bon format
-                        </div>
-                    </div>
-                    <!-- Champ Mot de passe avec icône -->
-                    <div class="mb-3 input-group">
-                        <span class="input-group-text" id="password-icon"><i class="bi bi-lock-fill"></i></span>
-                        <input type="password" class="form-control" id="PasswordInput" placeholder="Entrez votre mot de passe" aria-describedby="password-icon" required>
-                        <div class="invalid-feedback">
-                            Le mot de pass n'est pas assez robuste : Au moins 8 caractères, comprenant au moins 1 lettre en majescule, 1 miniscule, 1 chiffre, 1 caractère spécial
-                        </div>
-                        <div class ="valid-feedback">
-                            Le mot de passe est robuste
-                        </div>
+                        <span class="input-group-text" id="ancienPassword-icon"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" name="ancien_mdp" id="ancienPassword" placeholder="Ancien mot de passe" aria-describedby="ancienPassword-icon" required>
                     </div>
                     <div class="mb-3 input-group">
-                        <span class="input-group-text" id="password-icon"><i class="bi bi-lock-fill"></i></span>
-                        <input type="password" class="form-control" id="PasswordInputConf" placeholder="Entrez votre mot de passe" aria-describedby="password-icon" required>
-                        <div class="invalid-feedback">
-                            La confirmation n'est identique pas au mot de passe
-                        </div>
-                        <div class="valid-feedback">
-                            La confirmation est identique au mot de passe
-                        </div>
+                        <span class="input-group-text" id="nouveauPassword-icon"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" name="nouveau_mdp" id="nouveauPassword" placeholder="Nouveau mot de passe" aria-describedby="nouveauPassword-icon" required>
                     </div>
-                    <button type="submit" class="btn btn-dark w-100 mt-2" id="editPasswordBtn"  style="color: #57F2AA;">Valider</button>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text" id="confirmPassword-icon"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" name="confirmation_mdp" id="confirmPassword" placeholder="Confirmation du nouveau mot de passe" aria-describedby="confirmPassword-icon" required>
+                    </div>
+                    <button type="submit" name="modifier_mdp" class="btn btn-dark w-100 mt-2" id="editPasswordBtn"  style="color: #57F2AA;">Modifier</button>
                 </form>
             </div>
         </div>
@@ -45,4 +44,4 @@
         </div>
     </div>
 </div>
-<script src="js/auth/editPassword.js"></script>
+<!-- <script src="js/auth/editPassword.js"></script> -->

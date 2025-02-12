@@ -48,7 +48,7 @@ class User {
 
     // Récupérer les infos de l'utilisateur connecté
     public function getUserById($utilisateur_id) {
-        $query = "SELECT nom, prenom, email, pseudo, telephone, adresse, date_naissance FROM utilisateur WHERE utilisateur_id = ?";
+        $query = "SELECT nom, prenom, email, pseudo, telephone, adresse, date_naissance, password FROM utilisateur WHERE utilisateur_id = ?";
         if ($stmt = $this->conn->prepare($query)) {
             $stmt->bind_param("i", $utilisateur_id); // "i" car c'est un entier (INT)
             $stmt->execute();
@@ -69,6 +69,18 @@ class User {
 
         return $stmt->execute();
     }
+
+    // Modifier le mot de passe de l'utilisateur
+    public function updatePassword($utilisateur_id, $nouveau_mdp) {
+        $hashed_password = password_hash($nouveau_mdp, PASSWORD_DEFAULT);
+        $query = "UPDATE utilisateur SET password = ? WHERE utilisateur_id = ?";
+        if ($stmt = $this->conn->prepare($query)) {
+            $stmt->bind_param("si", $hashed_password, $utilisateur_id);
+            return $stmt->execute();
+        }
+        return false;
+    }
+
     // Récupérer les utilisateurs ayant role_id = 3
     public function getUtilisateursAvecRole3() {
         $query = "SELECT utilisateur_id, nom, prenom, email, pseudo FROM utilisateur WHERE role_id = 3";

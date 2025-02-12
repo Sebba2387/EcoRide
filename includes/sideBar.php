@@ -7,7 +7,7 @@
             </button>
             <!-- Image de profil -->
             <div class="mb-4 mt-4">
-                <img src="images/photo_profil_0.jpg" class="rounded-5 d-none d-md-block ms-3" alt="Profil" style="max-width: 80% ; max-height: 150px;">
+                <img src="images/photo_profil_5.jpg" class="rounded-5 d-none d-md-block ms-3" alt="Profil" style="max-width: 80% ; max-height: 150px;">
             </div>
             <!-- Menu -->
             <ul class="nav flex-column">
@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=signin" class="sidebar-item nav-link text-white">
+                    <a href="backend/controllers/logout.php" class="sidebar-item nav-link text-white">
                         <i class="bi bi-arrow-right-square fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Déconnexion</span>
                     </a>

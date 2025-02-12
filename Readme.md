@@ -24,7 +24,7 @@ Backend
 3. Inscription ✅
 4. Profil (Appel des données 'utilisateur')✅
 5. Mise à jour du Profil ✅
-6. Modification du mot de passe
+6. Modification du mot de passe ✅
 7. Ajouter d'une voiture 
 8. Supprimer d'une voiture 
 9. Mise à jour d'une voiture
@@ -47,7 +47,9 @@ Backend
 26. Profil Admin : Afficher les employés
 27. Profil Admin : Supprimer les employés
 
+
 99. Ajout de la photo de Profil
+99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu, 
 99. Ajout de la photo de la voiture
 99. Gestion des affichage selon le rôle (conversion en PHP)
 99. Gestion de message de contact
