@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])
 
         // Appeler la fonction registerUser()
         if ($userModel->registerUser($nom, $prenom, $email, $password, $pseudo)) {
-            echo "Inscription réussie !";
             header("Location: ../../index.php?page=compte"); // Redirection vers la connexion
             exit();
         } else {

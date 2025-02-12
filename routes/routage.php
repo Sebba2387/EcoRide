@@ -12,6 +12,7 @@ function getRoute($page) {
         "editPassword"        => ["views/auth/editPassword.php", false],
         "compte"        => ["views/auth/compte.php", true],
         "voitures"     => ["views/voitures.php", true],
+        "editVoitures"     => ["views/editVoitures.php", true],
         "covoiturages"       => ["views/covoiturages.php", true],
         "avis"          => ["views/avis.php", true],
     ];

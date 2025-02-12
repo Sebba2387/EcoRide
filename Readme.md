@@ -25,9 +25,9 @@ Backend
 4. Profil (Appel des données 'utilisateur')✅
 5. Mise à jour du Profil ✅
 6. Modification du mot de passe ✅
-7. Ajouter d'une voiture 
-8. Supprimer d'une voiture 
-9. Mise à jour d'une voiture
+7. Ajouter d'une voiture ✅
+8. Supprimer d'une voiture ✅
+9. Mise à jour d'une voiture ✅
 10. Ajout d'un covoiturage
 11. Modifier d'un covoiturage
 12. Supprimer d'un covoiturage

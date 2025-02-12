@@ -85,3 +85,49 @@ footer {
     font-weight: bold;
     font-size: 12px;
 }
+
+/*Formulaire Voiture */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: $tertiary;
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid $dark;
+    }
+
+    th {
+        background-color: $primary;
+        color: white;
+        font-weight: bold;
+    }
+
+    td {
+        background-color: $tertiary;
+        color: $dark;
+    }
+
+    tr:hover {
+        background-color: $secondary;
+    }
+
+    button {
+        padding: 5px 10px;
+        background-color: $primary;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $dark;
+        }
+    }
+}
+.h3{
+    font-weight: bold;
+    color: $primary;
+}

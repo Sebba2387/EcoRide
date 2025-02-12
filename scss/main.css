@@ -12042,4 +12042,45 @@ footer {
   color: #57F2AA;
   font-weight: bold;
   font-size: 12px;
+}
+
+/*Formulaire Voiture */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #D5F2DF;
+}
+.custom-table th, .custom-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #213A40;
+}
+.custom-table th {
+  background-color: #57F2AA;
+  color: white;
+  font-weight: bold;
+}
+.custom-table td {
+  background-color: #D5F2DF;
+  color: #213A40;
+}
+.custom-table tr:hover {
+  background-color: #59D99D;
+}
+.custom-table button {
+  padding: 5px 10px;
+  background-color: #57F2AA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.custom-table button:hover {
+  background-color: #213A40;
+}
+
+.h3 {
+  font-weight: bold;
+  color: #57F2AA;
 }/*# sourceMappingURL=main.css.map */

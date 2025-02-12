@@ -1,57 +1,74 @@
+<?php
+require_once 'backend/database/db.php';  // Connexion à la base de données
+require_once 'backend/models/voitureModel.php';  // Modèle User
+require_once 'backend/controllers/voitureController.php';  // Controller Voiture
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$voitureModel = new Voiture($conn);
+$voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
+
+?>
+
 <div class="container d-flex flex-column offset-md-1 mt-5">
     <div class="row justify-content-center mb-4">
         <div class="col-md-9 offset-md-2 mt-5 mb-5 offset-md-3 shadow-sm rounded" style="background-color: #F2F2F2;">
-            <form id="form-compte" class="mb-5 p-3 text-center rounded">
-                <!-- Champs "Modèle" et "Année" côte à côte / photo -->
-                    <div class="row mb-2">
-                        <div class="col-md-3 ml-1">
-                            <img src="images/img_voiture_1.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
-                        </div>
-                        <div class="col-md-3 ml-1">
-                            <img src="images/img_voiture_2.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
-                        </div>
-                        <div class="col-md-3 ml-1">
-                            <img src="images/img_voiture_3.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
-                        </div>
-                        <div class="col-md-3 ml-1">
-                            <img src="images/img_voiture_4.png" class="rounded-5 d-none d-md-block ms-1" alt="Profil" style="max-width: 100% ; max-height: 150px;">
-                        </div>
+            <!-- Formulaire d'ajout de voiture -->
+            <form id="form-voiture" class="mb-5 mt-3 p-3 text-center rounded" action="backend/controllers/voitureController.php" method="POST">
+                <div class="row mb-2 justify-content-center">
+                    <div class="col-md-5 py-2 text-center align-self-end">
+                        <input type="text" class="form-control" name="modele" id="modele" placeholder="Modèle*" required>
                     </div>
-                    <!-- Champs "Modèle" et "Année" côte à côte / photo -->
-                    <div class="row mb-2 justify-content-center">
+                </div>
+                <div class="row mb-2 justify-content-center">
                         <div class="col-md-5 py-2">
-                            <input type="text" class="form-control" id="modele" placeholder="Modèle*" required>
+                            <input type="text" class="form-control" name="immatriculation" id="immatriculation" placeholder="Immatriculation*" required>
                         </div>
                         <div class="col-md-5 py-2">
-                            <input type="text" class="form-control" id="annee" placeholder="Année*" required>
+                            <input type="date" class="form-control" name="date_immatriculation" id="date_immatriculation" placeholder="Date première immatriculation*" required>
                         </div>
+                </div>
+                <div class="row mb-2 justify-content-center">
+                    <div class="col-md-5 py-2">
+                        <input type="text" class="form-control" name="energie" id="energie" placeholder="Énergie*" required>
                     </div>
-                    <!-- Champs "Immatriculation" et "Couleur" côte à côte -->
-                    <div class="row mb-2 justify-content-center">
-                            <div class="col-md-5 py-2">
-                                <input type="text" class="form-control" id="immatriculation" placeholder="Immatriculation*" required>
-                            </div>
-                            <div class="col-md-5 py-2">
-                                <input type="text" class="form-control" id="immatriculationDate" placeholder="Date première immatriculation*" required>
-                            </div>
-                        </div>
-                        <!-- Champs "Consommation (L/100km)" et "Émissions de CO2 (g/km)" côte à côte -->
-                        <div class="row mb-2 justify-content-center">
-                            <div class="col-md-5 py-2">
-                                <input type="text" class="form-control" id="energie" placeholder="Énergie*" required>
-                            </div>
-                            <div class="col-md-5 py-2">
-                                <input type="text" class="form-control" id="couleur" placeholder="Couleur*" required>
-                            </div>
-                        </div>
-                        <!-- Bouton de soumission -->
-                        <div class="col-md-5 py-2 justify-content-center">
-                            <button type="submit" class="btn btn-dark mt-3 py-2" style="color: #57F2AA;">Enregistrer</button>
-                        </div>
-                    </form>
-        </div>
-        <div class="col-md-5 center-text py-2">
-            <button class="btn btn-primary text-white mt-3 py-2">Ajouter une voiture</button>
+                    <div class="col-md-5 py-2">
+                        
+                        <input type="text" class="form-control" name="couleur" id="couleur" placeholder="Couleur*" required>
+                    </div>
+                </div>
+                <div class="row mb-2 justify-content-center">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark mt-3 " name="ajouterVoiture" style="color: #57F2AA;">Ajouter un voiture</button>
+                    </div>
+                </div>
+            </form>
+            <h3 style="color: #57F2AA; font-weight: bold; font-size: 2rem;" >Voitures enregistrées</h3>
+            <table class="custom-table">
+                <tr>
+                    <th>Modèle</th>
+                    <th>Immatriculation</th>
+                    <th>Énergie</th>
+                    <th>Couleur</th>
+                    <th>Date d'immatriculation</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($voitures as $voiture) : ?>
+                    <tr>
+                        <td><?= $voiture['modele']; ?></td>
+                        <td><?= $voiture['immatriculation']; ?></td>
+                        <td><?= $voiture['energie']; ?></td>
+                        <td><?= $voiture['couleur']; ?></td>
+                        <td><?= $voiture['date_immatriculation']; ?></td>
+                        <td>
+                            <a href="index.php?page=editVoitures&id=<?= $voiture['voiture_id']; ?>">Modifier</a>
+                            <a href="backend/controllers/voitureController.php?delete=<?= $voiture['voiture_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
         </div>
     </div>
 </div>

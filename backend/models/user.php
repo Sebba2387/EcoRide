@@ -66,7 +66,6 @@ class User {
         $query = "UPDATE utilisateur SET nom = ?, prenom = ?, pseudo = ?, email = ?, telephone = ?, adresse = ?, date_naissance = ? WHERE utilisateur_id = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("sssssssi", $nom, $prenom, $pseudo, $email, $telephone, $adresse, $date_naissance, $utilisateur_id);
-
         return $stmt->execute();
     }
 
