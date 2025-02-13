@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=covoiturages" class="sidebar-item nav-link text-white">
+                    <a href="index.php?page=editReservations" class="sidebar-item nav-link text-white">
                         <i class="bi bi-calendar-event fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Réservations</span>
                     </a>

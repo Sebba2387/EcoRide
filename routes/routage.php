@@ -15,6 +15,8 @@ function getRoute($page) {
         "editVoitures"     => ["views/editVoitures.php", true],
         "covoiturages"       => ["views/covoiturages.php", true],
         "editCovoiturages"       => ["views/editCovoiturages.php", true],
+        "reservations"       => ["views/reservations.php", true],
+        "editReservations"       => ["views/editReservations.php", true],
         "avis"          => ["views/avis.php", true],
     ];
 

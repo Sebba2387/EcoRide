@@ -17,7 +17,7 @@ FrontEnd
     Ajouter des animations (boutons) ❌
     Ajouter des transitions❌
     Ajouter chronomètre ❌
-    Améliorer les pages (voyages, avis) ❌
+
 Backend
 1. Connexion ✅
 2. Déconnexion ✅
@@ -31,15 +31,15 @@ Backend
 10. Ajout d'un covoiturage ✅
 11. Modifier d'un covoiturage ✅
 12. Annuler d'un covoiturage ✅
-13. Rechercher les covoiturages
-14. Faire une réservation
-15. Annuler une réservation
-16. Refuser une réservation
-17. Accepter une réservation
-18. Ajouter un avis
-19. Afficher les avis
-20. Ajout profil Admin
-21. Ajout profil Employé
+13. Rechercher les covoiturages ✅
+14. Faire une réservation ✅
+15. Annuler une réservation ✅
+16. Refuser une réservation ✅
+17. Accepter une réservation ✅
+18. Ajouter un avis ✅
+19. Afficher les avis ✅
+20. Affichage profil Admin
+21. Affichage profil Employé
 22. Profil Admin & Employé : Afficher les utilisateurs
 23. Profil Admin & Employé : Supprimer les utilisateurs
 24. Profil Admin & Employé : Afficher les covoiturages
@@ -48,12 +48,15 @@ Backend
 27. Profil Admin : Supprimer les employés
 
 
+99. Affichage 
+99. Problème d'affichage footer à cause du tableau
 99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !
+99. Gestion des affichage selon le rôle (conversion en PHP)
 99. Ajout de la photo de Profil
+99. Afficher des résultats par page
 99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu, 
 99. Designer la page 404
 99. Ajout de la photo de la voiture
-99. Gestion des affichage selon le rôle (conversion en PHP)
 99. Gestion de message de contact
 
 

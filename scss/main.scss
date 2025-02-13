@@ -27,13 +27,6 @@ footer {
     left: 0;
     z-index: 1000;
 }
-// .main-container {
-//     display: flex;
-//     flex: 1;
-//     margin-top: 60px; /* Décalage sous le header */
-//     margin-bottom: 60px; /* Décalage au-dessus du footer */
-//     height: calc(100vh - 120px); /* Hauteur entre header et footer */
-// }
 
 /* Sidebar */
 #sidebar {
@@ -127,3 +120,58 @@ footer {
         }
     }
 }
+
+//MODAL AVIS
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 15% auto;
+    width: 30%;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+

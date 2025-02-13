@@ -3,9 +3,13 @@ require_once __DIR__ .'/../models/voitureModel.php';
 require_once __DIR__ .'/../models/covoiturageModel.php';
 require_once __DIR__ .'/../database/db.php';
 
-
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}
+// Vérification sécurisée
+if (!isset($_SESSION['utilisateur_id'])) {
+    header("Location: /EcoRide/index.php?page=signin");
+    exit();
 }
 
 $voitureModel = new Voiture($conn);

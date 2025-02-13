@@ -115,4 +115,18 @@ toggleBtn.addEventListener("click", () => {
         icon.classList.replace("bi-chevron-double-right", "bi-chevron-double-left");
     }
 });
+// Boite de dialogue "AVIS"
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("date_avis").value = new Date().toISOString().split('T')[0]; // Date actuelle
+});
+
+function ouvrirBoiteAvis(reservationId, covoiturageId) {
+    document.getElementById("reservation_id").value = reservationId;
+    document.getElementById("covoiturage_id").value = covoiturageId;
+    document.getElementById("modal-avis").style.display = "block";
+}
+
+function fermerBoiteAvis() {
+    document.getElementById("modal-avis").style.display = "none";
+}
 
