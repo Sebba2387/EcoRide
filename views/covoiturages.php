@@ -68,14 +68,14 @@ $voitureModel = new Voiture($conn);
                 <table class="custom-table">
                     <thead>
                         <tr>
-                            <th>Réf</th>
-                            <th>Voiture</th>
-                            <th>Départ</th>
-                            <th>Ville de départ</th>
-                            <th>Arrivée</th>
-                            <th>Ville d'arrivée</th>
-                            <th>Nombre de places</th>
-                            <th>Prix</th>
+                            <th class="text-center">Réf</th>
+                            <th class="text-center">Voiture</th>
+                            <th class="text-center">Départ</th>
+                            <th class="text-center">Ville de départ</th>
+                            <th class="text-center">Arrivée</th>
+                            <th class="text-center">Ville d'arrivée</th>
+                            <th class="text-center">Nombre de places</th>
+                            <th class="text-center">Prix</th>
                             <th class="text-center">Actions</th>
                         </tr>
                     </thead>
@@ -90,12 +90,12 @@ $voitureModel = new Voiture($conn);
                                     echo $voiture['modele']; 
                                     ?>
                                 </td>
-                                <td><?= $covoiturage['date_depart'] . ' ' . $covoiturage['heure_depart'] ?></td>
-                                <td><?= $covoiturage['lieu_depart'] ?></td>
-                                <td><?= $covoiturage['date_arrivee'] . ' ' . $covoiturage['heure_arrivee'] ?></td>
-                                <td><?= $covoiturage['lieu_arrivee'] ?></td>
-                                <td><?= $covoiturage['nombre_places'] ?></td>
-                                <td><?= $covoiturage['prix'] ?></td>
+                                <td class="text-center"><?= $covoiturage['date_depart'] . ' ' . $covoiturage['heure_depart'] ?></td>
+                                <td class="text-center"><?= $covoiturage['lieu_depart'] ?></td>
+                                <td class="text-center"><?= $covoiturage['date_arrivee'] . ' ' . $covoiturage['heure_arrivee'] ?></td>
+                                <td class="text-center"><?= $covoiturage['lieu_arrivee'] ?></td>
+                                <td class="text-center"><?= $covoiturage['nombre_places'] ?></td>
+                                <td class="text-center"><?= $covoiturage['prix'] ?></td>
                                 <td>
                                 <?php
                                     // Comparer la date et l'heure du covoiturage avec la date et l'heure actuelles

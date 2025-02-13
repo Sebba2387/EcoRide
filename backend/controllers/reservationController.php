@@ -22,7 +22,7 @@ if (isset($_GET['annuler'])) {
     if ($reservation->annulerReservation($reservation_id, $utilisateur_id)) {
         echo "<script>
                 alert('Réservation annulée avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=editReservations';
+                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=reservations';
               </script>";
         exit();
     } else {
@@ -40,7 +40,7 @@ if (isset($_GET['accepter'])) {
     if ($reservation->accepterReservation($reservation_id, $utilisateur_id)) {
         echo "<script>
                 alert('Réservation acceptée avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=editReservations';
+                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=reservations';
               </script>";
         exit();
     } else {
@@ -58,7 +58,7 @@ if (isset($_GET['terminer'])) {
     if ($reservation->terminerReservation($reservation_id, $utilisateur_id)) {
         echo "<script>
                 alert('Réservation terminée avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=editReservations';
+                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=reservations';
               </script>";
         exit();
     } else {
@@ -76,7 +76,7 @@ if (isset($_GET['refuser'])) {
     if ($reservation->refuserReservation($reservation_id, $utilisateur_id)) {
         echo "<script>
                 alert('Réservation refusée avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=editReservations';
+                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=reservations';
               </script>";
         exit();
     } else {
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($reservation->ajouterReservation($utilisateur_id, $covoiturage_id, $voiture_id)) {
         echo "<script>
                 alert('Réservation envoyée avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=editReservations';
+                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=reservations';
               </script>";
         exit();
     } else {

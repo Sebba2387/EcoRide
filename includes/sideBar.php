@@ -11,6 +11,12 @@
             </div>
             <!-- Menu -->
             <ul class="nav flex-column">
+            <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-house-fill fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Accueil</span>
+                    </a>
+                </li>
                 <li class="nav-item mb-2 mt-2">
                     <a href="index.php?page=compte" class="sidebar-item nav-link text-white">
                         <i class="bi bi-person-fill fs-3"></i>
@@ -30,8 +36,8 @@
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=editReservations" class="sidebar-item nav-link text-white">
-                        <i class="bi bi-calendar-event fs-3"></i>
+                    <a href="index.php?page=reservations" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-calendar3-event-fill fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Réservations</span>
                     </a>
                 </li>
