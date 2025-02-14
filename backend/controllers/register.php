@@ -6,8 +6,9 @@ require_once __DIR__ . '/../models/user.php';  // Modèle User
 // Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])) {
     // Vérifier si toutes les données sont présentes
-    if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pseudo'])) {
-        
+    if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) 
+        && !empty($_POST['password']) && !empty($_POST['pseudo'])) {
+
         // Récupérer les valeurs du formulaire
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -16,30 +17,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])
         $pseudo = $_POST['pseudo'];
 
         // Créer une instance de User avec la connexion à la BD
-        $userModel = new User($conn);  // MPORTANT : on passe $conn à User
+        $userModel = new User($conn);
 
-        // Appeler la fonction registerUser()
-        if ($userModel->registerUser($nom, $prenom, $email, $password, $pseudo)) {
-            header("Location: ../../index.php?page=compte"); // Redirection vers la connexion
+        // Inscription de l'utilisateur et récupération de son ID
+        $user_id = $userModel->registerUser($nom, $prenom, $email, $password, $pseudo);
+
+        if ($user_id) {  // Si l'inscription réussit
+            session_start(); // Démarrer la session
+            $_SESSION['utilisateur_id'] = $user_id; // Stocker l'ID en session
+            
+            header("Location: ../../index.php?page=compte"); // Rediriger vers compte.php
             exit();
         } else {
             echo "<script>
                 alert('Erreur lors de l'inscription.');
                 window.location.href = '../../index.php?page=signup';
-                </script>";
+            </script>";
         }
     } else {
         echo "<script>
-                alert('Tous les champs doivent être remplis.');
-                window.location.href = '../../index.php?page=signup';
-                </script>";
+            alert('Tous les champs doivent être remplis.');
+            window.location.href = '../../index.php?page=signup';
+        </script>";
     }
 } else {
     echo "<script>
-                alert('Requête invalide.');
-                window.location.href = '../../index.php?page=signup';
-                </script>";
+        alert('Requête invalide.');
+        window.location.href = '../../index.php?page=signup';
+    </script>";
 }
+
 
 //Inscription Employer
 // Vérifier si le formulaire est soumis
