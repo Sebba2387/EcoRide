@@ -38,25 +38,26 @@ Backend
 17. Accepter une réservation ✅
 18. Ajouter un avis ✅
 19. Afficher les avis ✅
-20. Affichage profil Admin
-21. Affichage profil Employé
+20. Affichage profil Admin  (SideBar)  ✅
+21. Affichage profil Employé  (SideBar)  ✅
 22. Profil Admin & Employé : Afficher les utilisateurs
 23. Profil Admin & Employé : Supprimer les utilisateurs
 24. Profil Admin & Employé : Afficher les covoiturages
 25. Profil Admin & Employé : Supprimer les covoiturages
+26. Profil Admin : Ajouter les employés
 26. Profil Admin : Afficher les employés
 27. Profil Admin : Supprimer les employés
 
 
-99. Affichage 
+99. Affichage par nombre de ligne de tableau
+99. Ajout de la photo de Profil
+99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu,
+99. Gestion des affichage selon le rôle (conversion en PHP)
+
 99. Problème d'affichage footer à cause du tableau
 99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !
-99. Gestion des affichage selon le rôle (conversion en PHP)
-99. Ajout de la photo de Profil
-99. Afficher des résultats par page
-99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu, 
+ 
 99. Designer la page 404
-99. Ajout de la photo de la voiture
 99. Gestion de message de contact
 
 

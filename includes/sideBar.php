@@ -1,3 +1,12 @@
+<?php
+require_once 'backend/database/db.php';  // Connexion à la base de données
+require_once 'backend/models/user.php';  // Modèle User
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <div class="container flex-column flex-md-row">
     <div class="sidebar col-3 col-md-3">
         <!-- NAVBAR VERTICALE -->
@@ -11,7 +20,8 @@
             </div>
             <!-- Menu -->
             <ul class="nav flex-column">
-            <li class="nav-item mb-2 mt-2">
+                <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 3)): ?>
+                <li class="nav-item mb-2 mt-2">
                     <a href="index.php?" class="sidebar-item nav-link text-white">
                         <i class="bi bi-house-fill fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Accueil</span>
@@ -49,10 +59,47 @@
                 </li>
                 <li class="nav-item mb-2 mt-2">
                     <a href="backend/controllers/logout.php" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-arrow-right-square-fill fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Déconnexion</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-clipboard2-data fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Statistiques</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-people fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Utilisateurs</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-signpost-2 fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Covoiturages</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)): ?>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-person-add fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Employés</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="backend/controllers/logout.php" class="sidebar-item nav-link text-white">
                         <i class="bi bi-arrow-right-square fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Déconnexion</span>
                     </a>
                 </li>
+                <?php endif; ?>
             </ul>
         </nav>
     </div> 
