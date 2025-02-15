@@ -40,6 +40,9 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
         <form class="p-3 border border-2 border-primary bg-primary rounded w-100 w-md-100" method="POST">
             <div class="d-flex flex-column flex-md-row gap-2 w-100">
                 <div class="input-group">
+                    <input type="text" class="form-control flex-grow-1" placeholder="ID" name="utilisateur_id">
+                </div>
+                <div class="input-group">
                     <input type="text" class="form-control flex-grow-1" placeholder="Nom" name="nom">
                 </div>
                 <div class="input-group">
@@ -73,7 +76,7 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
             </tr>
             <?php foreach ($employes as $employe) : ?>
                 <tr>
-                    <td><?= htmlspecialchars($employe['utilisateur_id']) ?></td>
+                    <td><?= htmlspecialchars($employe['utilisateur_id'])?></td>
                     <td><?= htmlspecialchars($employe['nom']) ?></td>
                     <td><?= htmlspecialchars($employe['prenom']) ?></td>
                     <td><?= htmlspecialchars($employe['email']) ?></td>
