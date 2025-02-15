@@ -1,3 +1,11 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$is_logged_in = isset($_SESSION['utilisateur_id']);
+?>
+
 <header>
     <!-- NAVBAR HORIZONTALE -->
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="primary">
@@ -24,11 +32,13 @@
                             <img src="images/connexion_btn.png" alt="Profil" width="28" height="28">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
+                        <?php if ($is_logged_in): ?>
+                            <li><a class="dropdown-item" href="index.php?page=compte" data-show="connected">Mon compte</a></li>
+                            <li><a class="dropdown-item" href="backend/controllers/logout.php" id="btnSignout" data-show="connected">Déconnexion</a></li>
+                        <?php else: ?>
                             <li><a class="dropdown-item" href="index.php?page=signup" data-show="disconnected">Inscription</a></li>
                             <li><a class="dropdown-item" href="index.php?page=signin" data-show="disconnected">Connexion</a></li>
-                            <li><a class="dropdown-item" href="backend/controllers/logout.php" id="btnSignout" data-show="connected">Déconnexion</a></li>
-                            <li><a class="dropdown-item" href="index.php?page=compte" data-show="connected">Mon compte</a></li>
-
+                        <?php endif; ?>
                         </ul>
                     </li>
                 </ul>
