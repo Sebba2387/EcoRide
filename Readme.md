@@ -40,8 +40,8 @@ Backend
 19. Afficher les avis ✅
 20. Affichage profil Admin  (SideBar)  ✅
 21. Affichage profil Employé  (SideBar)  ✅
-22. Profil Admin & Employé : Afficher les utilisateurs
-23. Profil Admin & Employé : Supprimer les utilisateurs
+22. Profil Admin & Employé : Afficher les utilisateurs  ✅
+23. Profil Admin & Employé : Supprimer les utilisateurs  ✅
 24. Profil Admin & Employé : Afficher les covoiturages
 25. Profil Admin & Employé : Supprimer les covoiturages
 26. Profil Admin : Ajouter les employés

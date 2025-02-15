@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer'])) {
     $covoiturage_id = $_POST['covoiturage_id'];
     $covoiturageModel->supprimerCovoiturage($covoiturage_id);
-    header("Location: gestion_covoiturages.php"); // Recharge la page
+    header("Location: ../../index.php?page=gestionCovoiturages"); // Recharge la page
     exit();
 }
 

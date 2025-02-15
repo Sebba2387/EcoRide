@@ -6,10 +6,7 @@ require_once __DIR__ .'/../models/user.php';  // Modèle User
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (!isset($_SESSION['role_id']) || ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 2)) {
-    header("Location: ../views/forbidden.php");
-    exit();
-}
+
 
 $userModel = new User($conn);
 

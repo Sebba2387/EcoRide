@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                    <a href="index.php?page=gestionCovoiturages" class="sidebar-item nav-link text-white">
                         <i class="bi bi-signpost-2 fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Covoiturages</span>
                     </a>

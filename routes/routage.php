@@ -18,7 +18,7 @@ function getRoute($page) {
         "reservations"       => ["views/reservations.php", true],
         "avis"          => ["views/avis.php", true],
         "gestionUtilisateurs"          => ["views/gestionUtilisateurs.php", true],
-        "gestionCovoiturage"          => ["views/gestionCovoiturage.php", true],
+        "gestionCovoiturages"          => ["views/gestionCovoiturages.php", true],
         "gestionEmployee"          => ["views/gestionEmployee.php", true],
     ];
 
