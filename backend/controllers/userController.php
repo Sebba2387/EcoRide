@@ -3,11 +3,13 @@ require_once __DIR__ . '/../database/db.php';  // Connexion à la base de donné
 require_once __DIR__ .'/../models/user.php';  // Modèle User
 
 // Vérifier si l'utilisateur est admin ou employé
-session_start();
-// if (!isset($_SESSION['role_id']) || ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 2)) {
-//     header("Location: ../views/forbidden.php");
-//     exit();
-// }
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['role_id']) || ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 2)) {
+    header("Location: ../views/forbidden.php");
+    exit();
+}
 
 $userModel = new User($conn);
 
@@ -18,7 +20,7 @@ $utilisateurs = $userModel->getUtilisateursAvecRole3();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer_utilisateur'])) {
     $utilisateur_id = $_POST['utilisateur_id'];
     $userModel->supprimerUtilisateur($utilisateur_id);
-    header("Location: gestion_utilisateurs.php"); // Recharge la page
+    header("Location: ../../index.php?page=gestionUtilisateurs"); // Recharge la page
     exit();
 }
 
@@ -38,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer_employe'])) {
     $Employe_id = $_POST['utilisateur_id'];
     $userModel->supprimerEmploye($Employe_id);
-    header("Location: gestion_employes.php"); // Recharge la page
+    header("Location: gestionEmployes.php"); // Recharge la page
     exit();
 }
 

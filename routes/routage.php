@@ -17,6 +17,9 @@ function getRoute($page) {
         "editCovoiturages"       => ["views/editCovoiturages.php", true],
         "reservations"       => ["views/reservations.php", true],
         "avis"          => ["views/avis.php", true],
+        "gestionUtilisateurs"          => ["views/gestionUtilisateurs.php", true],
+        "gestionCovoiturage"          => ["views/gestionCovoiturage.php", true],
+        "gestionEmployee"          => ["views/gestionEmployee.php", true],
     ];
 
     // Si la page existe dans les routes, on retourne le chemin et l'état de la sidebar
