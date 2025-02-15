@@ -9,10 +9,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $voitureModel = new Voiture($conn);
 // Vérifier si un ID de voiture est passé dans l'URL
-if (isset($_GET['id'])) {
-    $voiture_id = $_GET['id'];
-    $voiture = $voitureModel->getVoitureById($voiture_id);
-}
+// if (isset($_GET['id'])) {
+//     $voiture_id = $_GET['id'];
+//     $voiture = $voitureModel->getVoitureById($voiture_id);
+// }
 
 ?>
 <div class="container d-flex flex-column offset-md-1 mt-5">

@@ -19,61 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])
         // Créer une instance de User avec la connexion à la BD
         $userModel = new User($conn);
 
-        // Inscription de l'utilisateur et récupération de son ID
-        $user_id = $userModel->registerUser($nom, $prenom, $email, $password, $pseudo);
-
-        if ($user_id) {  // Si l'inscription réussit
-            session_start(); // Démarrer la session
-            $_SESSION['utilisateur_id'] = $user_id; // Stocker l'ID en session
-            
-            header("Location: ../../index.php?page=compte"); // Rediriger vers compte.php
+        // Appeler la fonction registerUser()
+        if ($userModel->registerUser($nom, $prenom, $email, $password, $pseudo)) {
+            header("Location: ../../index.php?page=signin"); // Redirection vers la connexion
             exit();
         } else {
-            echo "<script>
-                alert('Erreur lors de l'inscription.');
-                window.location.href = '../../index.php?page=signup';
-            </script>";
-        }
-    } else {
-        echo "<script>
-            alert('Tous les champs doivent être remplis.');
-            window.location.href = '../../index.php?page=signup';
-        </script>";
-    }
-} else {
-    echo "<script>
-        alert('Requête invalide.');
-        window.location.href = '../../index.php?page=signup';
-    </script>";
-}
-
-
-//Inscription Employer
-// Vérifier si le formulaire est soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_employe'])) {
-    // Vérifier si toutes les données sont présentes
-    if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['pseudo'])) {
-        
-        // Récupérer les valeurs du formulaire
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $pseudo = $_POST['pseudo'];
-
-        // Valeur pour le role_id
-        $role_id = 2; // Ex : attribuer directement le role_id ou obtenir une valeur dynamique.
-
-        // Créer une instance de User avec la connexion à la BD
-        $userModel = new User($conn);
-
-        // Appeler la fonction registerEmploye() pour ajouter l'employé
-        if ($userModel->registerEmploye($nom, $prenom, $email, $password, $pseudo, $role_id)) {
-            echo "Inscription réussie !";
-            header("Location: ../../views/gestion_employes.php"); // Redirection vers la gestion des employés
-            exit();
-        } else {
-            echo "Erreur lors de l'ajout de l'employé.";
+            echo "Erreur lors de l'inscription.";
         }
     } else {
         echo "Tous les champs doivent être remplis.";
@@ -81,4 +32,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_employe'])) {
 } else {
     echo "Requête invalide.";
 }
+
 ?>

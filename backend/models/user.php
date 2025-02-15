@@ -17,13 +17,9 @@ class User {
         // Liaison des paramètres
         $stmt->bind_param("sssss", $nom, $prenom, $email, $hashed_password, $pseudo);
         // Exécution de la requête
-        if ($stmt->execute()) {
-            // Récupérer l'ID de l'utilisateur inséré
-            return $this->conn->insert_id;
-        } else {
-            return false;
-        }
+        return $stmt->execute();
     }
+
 
     // Connexion de l'utilisateur
     public function loginUser($email, $password) {
