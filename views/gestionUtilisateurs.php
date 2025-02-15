@@ -36,9 +36,9 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
     <?php if (isset($_SESSION['message'])): ?>
         <p><?= $_SESSION['message']; unset($_SESSION['message']); ?></p>
     <?php endif; ?>
-    <?php if ($afficherTableau) : ?>
+<?php if ($afficherTableau) : ?>
     <div class="container d-flex justify-content-center align-items-center" style="display: none;">
-        <?php if (!empty($utilisateurs)) : ?>
+    <?php if (!empty($utilisateurs)) : ?>
         <table class="custom-table">
             <tr>
                 <th>ID</th>

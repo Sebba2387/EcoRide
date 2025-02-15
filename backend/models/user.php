@@ -89,6 +89,14 @@ class User {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
+    // Récupérer les utilisateurs ayant role_id = 2
+    public function getEmployesAvecRole2() {
+        $query = "SELECT utilisateur_id, nom, prenom, email, pseudo FROM utilisateur WHERE role_id = 2";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
     // Supprimer un utilisateur par son ID
     public function supprimerUtilisateur($utilisateur_id) {
         // Supprimer les réservations où l'utilisateur est passager
@@ -112,7 +120,7 @@ class User {
         $stmtCovoiturages->execute();
         $stmtCovoiturages->close();
     
-        // 4Supprimer les voitures de l'utilisateur
+        // Supprimer les voitures de l'utilisateur
         $queryVoitures = "DELETE FROM voiture WHERE utilisateur_id = ?";
         $stmtVoitures = $this->conn->prepare($queryVoitures);
         $stmtVoitures->bind_param("i", $utilisateur_id);
@@ -192,7 +200,7 @@ class User {
         $stmtCovoiturages->execute();
         $stmtCovoiturages->close();
     
-        // 4Supprimer les voitures de l'utilisateur
+        // Supprimer les voitures de l'utilisateur
         $queryVoitures = "DELETE FROM voiture WHERE utilisateur_id = ?";
         $stmtVoitures = $this->conn->prepare($queryVoitures);
         $stmtVoitures->bind_param("i", $Employe_id);
@@ -248,18 +256,32 @@ class User {
     
         return $employes;
     }
+       
     public function registerEmploye($nom, $prenom, $email, $password, $pseudo, $role_id=2) {
-        // Hasher le mot de passe
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        // Requête d'insertion (SANS utilisateur_id car AUTO_INCREMENT)
-        $sql = "INSERT INTO utilisateur (nom, prenom, email, password, pseudo, role_id) VALUES (?, ?, ?, ?, ?, ?)";
-        // Préparation de la requête
-        $stmt = $this->conn->prepare($sql);
-        // Liaison des paramètres
-        $stmt->bind_param("sssssi", $nom, $prenom, $email, $hashed_password, $pseudo,$role_id);
-        // Exécution de la requête
-        return $stmt->execute();
-    }
+        // Vérifier si l'email existe déjà
+        $checkQuery = "SELECT email FROM utilisateur WHERE email = ?";
+        $stmt = $this->conn->prepare($checkQuery);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows > 0) {
+            return "Cet email est déjà utilisé. Veuillez en choisir un autre.";
+        }
     
+        // Hachage du mot de passe
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+        // Requête d'insertion
+        $query = "INSERT INTO utilisateur (nom, prenom, email, password, pseudo, role_id) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssssi", $nom, $prenom, $email, $hashedPassword, $pseudo, $role_id);
+    
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return "Erreur lors de l'inscription.";
+        }
+    }
 }
 ?>

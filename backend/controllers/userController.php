@@ -33,26 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $utilisateurs = User::getFilteredUtilisateurs($filters);
 }
 
-// Suppression d'un employé
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['supprimer_employe'])) {
-    $Employe_id = $_POST['utilisateur_id'];
-    $userModel->supprimerEmploye($Employe_id);
-    header("Location: gestionEmployes.php"); // Recharge la page
-    exit();
-}
-
-// Filtrer les employes ayant role_id = 2
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $filters = [
-        'nom' => $_POST['nom'] ?? '',
-        'prenom' => $_POST['prenom'] ?? '',
-        'email' => $_POST['email'] ?? '',
-        'pseudo' => $_POST['pseudo'] ?? '',
-    ];
-
-    $employes = User::getFilteredEmployes($filters);
-}
-
 // Modifier le mot de passe de l'utilisateur
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['modifier_mdp'])) {
     if (!isset($_SESSION['utilisateur_id'])) {

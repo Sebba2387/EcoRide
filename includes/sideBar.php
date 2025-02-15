@@ -86,7 +86,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)): ?>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
+                    <a href="index.php?page=gestionEmployes" class="sidebar-item nav-link text-white">
                         <i class="bi bi-person-add fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Employés</span>
                     </a>
