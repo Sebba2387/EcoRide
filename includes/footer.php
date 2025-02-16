@@ -7,7 +7,7 @@
             <p>157, Av Victor Hugo, 69006 Lyon<br>Hotline : +33 1 44 35 31 00</p>
         </div>
         <div class="col-12 col-lg-3">
-            <img src="images/avis_google.png" alt="Logo">
+            <img src="assets/images/avis_google.png" alt="Logo">
         </div>
         <div class="col-12 col-lg-2">
             <i class="bi bi-twitter-x fs-3 text-dark"></i>
@@ -16,7 +16,7 @@
             <i class="bi bi-linkedin fs-3 text-dark"></i>
         </div>
         <div class="col-12 col-lg-2">
-            <img src="images/EcoRide_logo.png" alt="Logo" width="165" height="35">
+            <img src="assets/images/EcoRide_logo.png" alt="Logo" width="165" height="35">
             <p class="text-dark fw-bold">&copy; 2025</p>
         </div>
     </div>

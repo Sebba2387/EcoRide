@@ -1,5 +1,5 @@
 <?php 
-require_once 'backend/controllers/employeController.php'; 
+require_once __DIR__ . '/../backend/controllers/employeController.php'; 
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

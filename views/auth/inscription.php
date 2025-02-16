@@ -22,9 +22,6 @@
                     <div class="row mb-2">
                         <div class="col-md-6 py-2">
                             <input type="email" class="form-control" name="email" id="EmailInput" placeholder="Email*" required>
-                            <div class="invalid-feedback">
-                                Le mail n'est pas au bon format
-                            </div>
                         </div>
                         <div class="col-md-6 py-2">
                             <input type="text" class="form-control" name="pseudo" id="PseudoInput" placeholder="Pseudo" required>
@@ -34,18 +31,9 @@
                     <div class="row mb-2">
                         <div class="col-md-6 py-2">
                             <input type="password" class="form-control"  name="password" id="PasswordInput" placeholder="Mot de passe*" required>
-                            <div class="invalid-feedback">
-                                Le mot de pass n'est pas assez robuste : Au moins 8 caractères, comprenant au moins 1 lettre en majescule, 1 miniscule, 1 chiffre, 1 caractère spécial
-                            </div>
-                            <div class ="valid-feedback">
-                                Le mot de passe est robuste
-                            </div>
                         </div>
                         <div class="col-md-6 py-2">
                             <input type="password" class="form-control" id="PasswordInputConfirm" placeholder="Confirmez votre mot de passe*" required>
-                            <div class="invalid-feedback">
-                                La confirmation n'est identique pas au mot de passe
-                            </div>
                         </div>
                     </div>
                     <!-- Bouton de soumission -->
@@ -56,7 +44,7 @@
         
         <!-- Colonne droite : Image -->
         <div class="col-md-6 text-center">
-            <img src="images/img_inscription.png" alt="Image" class="img-fluid">
+            <img src="assets/images/img_inscription.png" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>

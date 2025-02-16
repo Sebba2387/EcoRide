@@ -1,5 +1,5 @@
 <?php 
-require_once 'backend/controllers/covoiturageController.php'; 
+require_once __DIR__ . '/../backend/controllers/covoiturageController.php'; 
 
 // Vérifier si le bouton a été cliqué
 $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
@@ -93,6 +93,6 @@ $currentDate = date('Y-m-d'); // Date actuelle
 <?php endif; ?>
     <!-- Image centrée -->
     <div class="container-fluid text-center mt-2">
-        <img src="images/img_accueil.jpg" alt="Image centrée" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+        <img src="assets/images/img_accueil.jpg" alt="Image centrée" class="img-fluid" style="max-width: 100%; max-height: 400px;">
     </div>
 </div> 

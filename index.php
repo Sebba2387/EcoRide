@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="assets/scss/main.css">
     <title>EcoRide</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
     include_once "includes/header.php";
 
     // Inclure le fichier de routage
-    include_once "routes/routage.php";
+    include_once "routes/router.php";
 
     // Récupérer l’URL demandée
     $page = isset($_GET['page']) ? $_GET['page'] : "";
@@ -43,7 +43,7 @@
     <main id="main-page" class="col-10 col-md-9 ">
         <!-- Le contenu de la page sera injecté ici -->
     </main>
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
     <!-- Installation du strcipt JS pour Bootstrap -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

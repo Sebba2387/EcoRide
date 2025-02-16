@@ -1,9 +1,9 @@
 <?php
 // Connexion à la base de données et récupération des covoiturages
-require_once 'backend/controllers/covoiturageController.php';
-require_once 'backend/database/db.php';
-require_once 'backend/models/covoiturageModel.php';
-require_once 'backend/models/voitureModel.php';
+require_once __DIR__ . '/../backend/controllers/covoiturageController.php';
+require_once __DIR__ . '/../backend/database/db.php';
+require_once __DIR__ . '/../backend/models/covoiturageModel.php';
+require_once __DIR__ . '/../backend/models/voitureModel.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

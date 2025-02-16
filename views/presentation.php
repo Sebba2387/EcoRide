@@ -1,6 +1,3 @@
-<?php
-    include_once "includes/header.php";
-?>
 <div class="container-fluid main-content mt-5">
     <div class="row h-100">
         <!-- Colonne gauche : Texte -->
@@ -15,10 +12,7 @@
         </div>
         <!-- Colonne droite : Image -->
         <div class="col-md-5 d-flex justify-content-center align-items-center text-center">
-            <img src="images/img_presentation.jpg" alt="Image" class="img-fluid w-100">
+            <img src="assets/images/img_presentation.jpg" alt="Image" class="img-fluid w-100">
         </div>
     </div>
 </div>
-<?php
-    include_once "includes/footer.php";
-?>

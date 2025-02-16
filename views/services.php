@@ -37,7 +37,7 @@
         </div>
         <!-- Contenu principal (Colonne droite) -->
         <div class="col-md-5 d-flex justify-content-center align-items-center text-center">
-            <img src="images/img_presentation.jpg" alt="Image" class="img-fluid">
+            <img src="assets/images/img_presentation.jpg" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>

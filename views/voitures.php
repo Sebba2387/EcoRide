@@ -1,7 +1,7 @@
 <?php
-require_once 'backend/database/db.php';  // Connexion à la base de données
-require_once 'backend/models/voitureModel.php';  // Modèle User
-require_once 'backend/controllers/voitureController.php';  // Controller Voiture
+require_once __DIR__ . '/../backend/database/db.php';  // Connexion à la base de données
+require_once __DIR__ . '/../backend/models/voitureModel.php';  // Modèle User
+require_once __DIR__ . '/../backend/controllers/voitureController.php';  // Controller Voiture
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

@@ -58,7 +58,7 @@ $user = $userModel->getUserById($_SESSION['utilisateur_id']);
                 </form>
             </div>
             <div class="col-md-10 col-10 text-center">
-                <img src="images/img_profil.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+                <img src="assets/images/img_profil.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
             </div>
         </div>
     </div>

@@ -6,6 +6,6 @@
     </div>
 
     <div class="container-fluid text-center mt-2">
-        <img src="images/img_404.jpg" alt="Image centrée" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+        <img src="assets/images/img_404.jpg" alt="Image centrée" class="img-fluid" style="max-width: 100%; max-height: 400px;">
     </div>
 </div> 

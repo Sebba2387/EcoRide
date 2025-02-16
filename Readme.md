@@ -53,9 +53,8 @@ Cette initiative s'inscrit dans une démarche globale visant à promouvoir une t
 99. Ajout de la photo de Profil
 99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu,
 
-
 99. Problème d'affichage footer à cause du tableau
-99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !
+99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !   ✅
 99. Affichage par nombre de ligne de tableau
 99. Gestion de message de contact
 

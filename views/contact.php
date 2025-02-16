@@ -12,15 +12,9 @@
                     <div class="row mb-3">
                         <div class="col-md-6 py-3">
                             <input type="text" class="form-control" id="NomInput" placeholder="Nom*" required>
-                            <div class="invalid-feedback">
-                                Il est important de renseigner votre nom
-                            </div>
                         </div>
                         <div class="col-md-6 py-3">
                             <input type="email" class="form-control" id="EmailInput" placeholder="Email*" required>
-                            <div class="invalid-feedback">
-                                Le mail n'est pas au bon format
-                            </div>
                         </div>
                     </div>
                     <!-- Champ de sélection -->
@@ -45,8 +39,8 @@
         
         <!-- Colonne droite : Image -->
         <div class="col-md-6 text-center">
-            <img src="images/img_contact.jpg" alt="Image" class="img-fluid">
+            <img src="assets/images/img_contact.jpg" alt="Image" class="img-fluid">
         </div>
     </div>
 </div>
-<script src="js/contact.js"></script>
+<!-- <script src="js/contact.js"></script> -->

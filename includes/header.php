@@ -11,7 +11,7 @@ $is_logged_in = isset($_SESSION['utilisateur_id']);
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <img src="images/EcoRide_logo.png" alt="Logo" width="165" height="35">
+                <img src="assets/images/EcoRide_logo.png" alt="Logo" width="165" height="35">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@ $is_logged_in = isset($_SESSION['utilisateur_id']);
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="images/connexion_btn.png" alt="Profil" width="28" height="28">
+                            <img src="assets/images/connexion_btn.png" alt="Profil" width="28" height="28">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                         <?php if ($is_logged_in): ?>

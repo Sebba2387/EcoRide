@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données et récupération des covoiturages
-require_once 'backend/database/db.php';
+require_once __DIR__ . '/../backend/database/db.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -78,7 +78,7 @@ $result = $stmt->get_result();
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 col-6 text-center">
-            <img src="images/img_voyages.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
+            <img src="assets/images/img_voyages.jpg" alt="Image de connexion" class="img-fluid" style="max-width: 100%; max-height: 400px;">
         </div>
     </div>
 </div>   

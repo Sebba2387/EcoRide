@@ -16,15 +16,15 @@ if (session_status() == PHP_SESSION_NONE) {
             </button>
             <!-- Image de profil -->
             <div class="mb-4 mt-4">
-                <img src="images/photo_profil_5.jpg" class="rounded-5 d-none d-md-block ms-3" alt="Profil" style="max-width: 80% ; max-height: 150px;">
+                <img src="assets/images/img_profil_user.jpg" class="rounded-5 d-none d-md-block ms-3" alt="Profil" style="max-width: 80% ; max-height: 150px;">
             </div>
             <!-- Menu -->
             <ul class="nav flex-column">
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 3)): ?>
                 <li class="nav-item mb-2 mt-2">
                     <a href="index.php?" class="sidebar-item nav-link text-white">
-                        <i class="bi bi-house-fill fs-3"></i>
-                        <span class="textSideBar d-none d-md-inline ms-3">Accueil</span>
+                        <i class="bi bi-suitcase-fill fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">C'est parti !</span>
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
@@ -66,9 +66,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="index.php?page=avis" class="sidebar-item nav-link text-white">
-                        <i class="bi bi-clipboard2-data fs-3"></i>
-                        <span class="textSideBar d-none d-md-inline ms-3">Statistiques</span>
+                    <a href="index.php?page=compte" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-person-fill fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Profil</span>
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
