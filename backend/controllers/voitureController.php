@@ -2,13 +2,14 @@
 require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
 require_once __DIR__ .'/../models/voitureModel.php';  // Modèle Voiture
 
-// if (!isset($_SESSION['utilisateur_id'])) {
-//     header("Location: index.php?page=signin");
-//     exit();
-// }
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}
+// Vérification sécurisée
+if (!isset($_SESSION['utilisateur_id'])) {
+    header("Location: ../../index.php?page=signin");
+    exit();
 }
 
 $voitureModel = new Voiture($conn);
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['miseAJourVoiture'])) 
     $voitureModel->updateVoiture($voiture_id, $modele, $immatriculation, $energie, $couleur, $date_immatriculation);
     echo "<script>
         alert('Mise à jour faite avec succès !');
-        window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=voitures';
+        window.location.href = '../../index.php?page=voitures';
       </script>";
     exit();
 }

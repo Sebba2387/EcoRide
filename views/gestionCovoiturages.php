@@ -71,7 +71,7 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
                     <td><?= htmlspecialchars($covoiturage['nombre_places']) ?></td>
                     <td><?= htmlspecialchars($covoiturage['duree']) ?>h</td>
                     <td><?= htmlspecialchars($covoiturage['energie']) ?></td>
-                    <td><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?>/5</td>
+                    <td><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?> ⭐</td>
                     <td><?= htmlspecialchars($covoiturage['prix']) ?>€</td>
                     <td>
                     <form method="POST" action="backend/controllers/covoiturageController.php" onsubmit="return confirm('Confirmer la suppression ?');">

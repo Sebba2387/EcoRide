@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 // Vérification sécurisée
 if (!isset($_SESSION['utilisateur_id'])) {
-    header("Location: /EcoRide/index.php?page=signin");
+    header("Location: ../../index.php?page=signin");
     exit();
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         echo "<script>
                 alert('Avis émis avec succès !');
-                window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=avis';
+                window.location.href = '../../index.php?page=avis';
               </script>";
         exit();
     } else {

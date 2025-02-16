@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 // Vérification sécurisée
 if (!isset($_SESSION['utilisateur_id'])) {
-    header("Location: /EcoRide/index.php?page=signin");
+    header("Location: /../../index.php?page=signin");
     exit();
 }
 
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['addCovoiturage'])) {
     $covoiturageModel->addCovoiturage($_SESSION['utilisateur_id'], $voiture_id, $date_depart, $heure_depart, $lieu_depart, $date_arrivee, $heure_arrivee, $lieu_arrivee, $nombre_places, $prix);
     echo "<script>
         alert('Covoiturage ajouté avec succès !');
-        window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=covoiturages';
+        window.location.href = '../../index.php?page=covoiturages';
       </script>";  // Redirection vers la page des covoiturages
     exit();
 }
@@ -60,7 +60,7 @@ if (isset($_GET['annuler'])) {
     $covoiturageModel->supprimerCovoiturage($covoiturage_id);  // Suppression du covoiturage
     echo "<script>
         alert('Covoiturage annulé avec succès !');
-        window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=covoiturages';
+        window.location.href = '../../index.php?page=covoiturages';
       </script>";  // Redirection vers la page des covoiturages
     exit();
 }
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['miseAJourCovoiturage']
 
     echo "<script>
         alert('Covoiturage mis à jour avec succès !');
-        window.location.href = 'http://127.0.0.1/EcoRide/index.php?page=covoiturages';
+        window.location.href = '../../index.php?page=covoiturages';
     </script>";
 }
 
