@@ -3,6 +3,7 @@ require_once 'backend/controllers/covoiturageController.php';
 
 // Vérifier si le bouton a été cliqué
 $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
+$currentDate = date('Y-m-d'); // Date actuelle
 ?>
 <div class="container mt-5">
     <!-- Texte aligné -->
@@ -52,35 +53,37 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
         <?php if (!empty($covoiturages)) : ?>
         <table class="custom-table">
             <tr>
-                <th>Pseudo</th>
-                <th>Départ</th>
-                <th>Arrivée</th>
-                <th>Date</th>
-                <th>Places</th>
-                <th>Durée</th>
-                <th>Énergie</th>
-                <th>Note</th>
-                <th>Prix</th>
-                <th>Action</th>
+                <th class="text-dark text-center">Pseudo</th>
+                <th class="text-dark text-center">Départ</th>
+                <th class="text-dark text-center">Arrivée</th>
+                <th class="text-dark text-center">Date</th>
+                <th class="text-dark text-center">Places</th>
+                <th class="text-dark text-center">Durée</th>
+                <th class="text-dark text-center">Énergie</th>
+                <th class="text-dark text-center">Note</th>
+                <th class="text-dark text-center">Prix</th>
+                <th class="text-dark text-center">Action</th>
             </tr>
             <?php foreach ($covoiturages as $covoiturage) : ?>
+                <?php if ($covoiturage['date_depart'] >= $currentDate) : ?>
                 <tr>
-                    <td><?= htmlspecialchars($covoiturage['pseudo']) ?></td>
-                    <td><?= htmlspecialchars($covoiturage['lieu_depart']) ?></td>
-                    <td><?= htmlspecialchars($covoiturage['lieu_arrivee']) ?></td>
-                    <td><?= htmlspecialchars($covoiturage['date_depart']) ?></td>
-                    <td><?= htmlspecialchars($covoiturage['nombre_places']) ?></td>
-                    <td><?= htmlspecialchars($covoiturage['duree']) ?>h</td>
-                    <td><?= htmlspecialchars($covoiturage['energie']) ?></td>
-                    <td><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?> ⭐</td>
-                    <td><?= htmlspecialchars($covoiturage['prix']) ?>€</td>
-                    <td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['pseudo']) ?></td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['lieu_depart']) ?></td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['lieu_arrivee']) ?></td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['date_depart']) ?></td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['nombre_places']) ?></td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['duree']) ?>h</td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['energie']) ?></td>
+                    <td class="text-center"><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?> ⭐</td>
+                    <td class="text-center"><?= htmlspecialchars($covoiturage['prix']) ?>€</td>
+                    <td class="text-center">
                     <form action="backend/controllers/reservationController.php" method='POST'>
                         <input type='hidden' name='covoiturage_id' value="<?php echo $covoiturage['covoiturage_id']; ?>">
                         <button type='submit' name='reserver' class='btn btn-success'>Réserver</button>
                     </form>
                     </td>
                 </tr>
+                <?php endif; ?>
             <?php endforeach; ?>
         </table>
     <?php else : ?>

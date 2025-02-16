@@ -6,7 +6,7 @@ De plus, des fonctionnalités telles que la mise en avant des conducteurs utilis
 Cette initiative s'inscrit dans une démarche globale visant à promouvoir une transition écologique tout en offrant une solution pratique, économique et conviviale pour les utilisateurs.
 
 # Etapes
-FrontEnd
++ FrontEnd
 1. Mise en place du système de routage ✅
 2. Instalaltion de la bibliothèque de Boostrap ✅
 3. Configuration de l'environnement de travail ✅
@@ -15,10 +15,9 @@ FrontEnd
 6. Ajouter des effets dynamiques : ❓
     Validation des champs ❌
     Ajouter des animations (couleur primary aux boutons) ❌
-    Ajouter des transitions❌
     Ajouter chronomètre ❌
 
-Backend
++ Backend
 1. Connexion ✅
 2. Déconnexion ✅
 3. Inscription ✅
@@ -49,15 +48,15 @@ Backend
 27. Profil Admin : Supprimer les employés  ✅
 
 99. Designer la page 404  ✅
-99. Gestion des affichage selon le rôle (conversion en PHP)
-99. Affichage par nombre de ligne de tableau
+99. Gestion des affichage selon le rôle (conversion en PHP)  ✅
+99. Déploiement (Configuration) 
 99. Ajout de la photo de Profil
 99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu,
 
 
 99. Problème d'affichage footer à cause du tableau
 99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !
-
+99. Affichage par nombre de ligne de tableau
 99. Gestion de message de contact
 
 
