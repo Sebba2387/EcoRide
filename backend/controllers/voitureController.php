@@ -27,15 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['ajouterVoiture'])) {
     exit();
 }
 
+// Supprimer une voiture
 if (isset($_GET['delete'])) {
-    // Supprimer une voiture
+    // Récupérer l'ID de la voiture à supprimer
     $voiture_id = $_GET['delete'];
-    $voitureModel->deleteVoiture($voiture_id);
+    // Appeler la fonction pour supprimer la voiture
+    $message = $voitureModel->deleteVoiture($voiture_id);
+    // Ajouter le message à la session pour l'afficher dans la vue
+    $_SESSION['message'] = $message;
+    // Rediriger vers la page des voitures
     header("Location: ../../index.php?page=voitures");
     exit();
 }
-
-
 
 // Vérifier si un ID de voiture est passé dans l'URL
 if (isset($_GET['id'])) {

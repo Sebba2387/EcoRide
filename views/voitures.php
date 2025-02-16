@@ -69,6 +69,12 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
                     </tr>
                 <?php endforeach; ?>
             </table>
+            <?php if (isset($_SESSION['message'])): ?>
+                <script type="text/javascript">
+                    alert("<?= $_SESSION['message']; ?>");
+                </script>
+                <?php unset($_SESSION['message']); ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>

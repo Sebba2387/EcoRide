@@ -42,12 +42,32 @@ class Voiture {
         return $stmt->execute();
     }
 
-    // Supprimer une voiture
+    // Supprimer une voiture si elle n'est pas liée à un covoiturage
     public function deleteVoiture($voiture_id) {
-        $sql = "DELETE FROM voiture WHERE voiture_id = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $voiture_id);
-        return $stmt->execute();
+        // Vérifier si la voiture est liée à un covoiturage
+        $sqlCheck = "SELECT * FROM covoiturage WHERE voiture_id = ?";
+        $stmtCheck = $this->conn->prepare($sqlCheck);
+        $stmtCheck->bind_param("i", $voiture_id);
+        $stmtCheck->execute();
+
+        // Vérifier s'il y a des résultats
+        $stmtCheck->store_result();
+        if ($stmtCheck->num_rows > 0) {
+            // La voiture est liée à un covoiturage, on ne la supprime pas
+            return "Cette voiture est actuellement liée à un covoiturage et ne peut pas être supprimée.";
+        }
+        // Si la voiture n'est pas liée, la supprimer
+        $sqlDelete = "DELETE FROM voiture WHERE voiture_id = ?";
+        $stmtDelete = $this->conn->prepare($sqlDelete);
+        $stmtDelete->bind_param("i", $voiture_id);
+        
+        if ($stmtDelete->execute()) {
+            // Si l'exécution de la requête de suppression a réussi
+            return "Voiture supprimée avec succès.";
+        } else {
+            // Si une erreur s'est produite lors de la suppression
+            return "Une erreur est survenue lors de la suppression de la voiture.";
+        }
     }
     //Méthode pour récupérer les voitures d'un utilisateur
     public function getUserCars($user_id) {

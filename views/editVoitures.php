@@ -19,7 +19,7 @@ $voitureModel = new Voiture($conn);
     <div class="row justify-content-center mb-4">
         <div class="col-md-9 offset-md-2 mt-5 mb-5 offset-md-3 shadow-sm rounded" style="background-color: #F2F2F2;"> 
             <!-- Formulaire d'ajout de voiture -->
-            <form id="form-voiture" class="mb-5 mt-3 p-3 text-center rounded" style="background-color: #D5F2DF;" action="index.php?page=editVoitures&id=<?= $voiture['voiture_id'];?>" method="POST">
+            <form id="form-voiture" class="mb-5 mt-3 p-3 text-center rounded" action="index.php?page=editVoitures&id=<?= $voiture['voiture_id'];?>" method="POST">
                 <div class="row mb-2 justify-content-center">
                     <div class="col-md-5 py-2 text-center align-self-end">
                         <label for="model" class="form-label text-secondary">Modèle</label>
@@ -33,7 +33,7 @@ $voitureModel = new Voiture($conn);
                     </div>
                     <div class="col-md-5 py-2">
                         <label for="date_immatriculation" class="form-label text-secondary">Date de la première mmatriculation</label>
-                        <input type="text" class="form-control" name="date_immatriculation" id="immatriculationDate" placeholder="Date première immatriculation*" value="<?= $voiture['date_immatriculation']; ?>" required>
+                        <input type="date" class="form-control" name="date_immatriculation" id="immatriculationDate" placeholder="Date première immatriculation*" value="<?= $voiture['date_immatriculation']; ?>" required>
                     </div>
                 </div>
                 <div class="row mb-2 justify-content-center">
