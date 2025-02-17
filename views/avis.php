@@ -1,6 +1,7 @@
 <?php
 // Connexion à la base de données et récupération des covoiturages
-require_once __DIR__ . '/../backend/database/db.php';
+require_once '/home/ecoriders/backend/database/db.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -47,10 +48,6 @@ $result = $stmt->get_result();
 <div class="container-fluid d-flex flex-column justify-content-center mt-5">
     <div class="row justify-content-center mb-4">
         <div class="col-md-10 col-10 mt-5 mb-5 offset-md-1">
-            <a href="?tri=<?= $nouveau_tri ?>" class="btn-sort">
-                Trier par Voyage (<?= $tri === 'ASC' ? '⬆' : '⬇' ?>)
-            </a>
-
             <table class="custom-table">
                 <tr>
                     <th class="text-center">Ref du voyage</th>

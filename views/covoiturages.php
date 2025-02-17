@@ -1,9 +1,10 @@
 <?php
 // Connexion à la base de données et récupération des covoiturages
-require_once __DIR__ . '/../backend/controllers/covoiturageController.php';
-require_once __DIR__ . '/../backend/database/db.php';
-require_once __DIR__ . '/../backend/models/covoiturageModel.php';
-require_once __DIR__ . '/../backend/models/voitureModel.php';
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/controllers/covoiturageController.php';
+require_once '/home/ecoriders/backend/models/covoiturageModel.php';
+require_once '/home/ecoriders/backend/models/voitureModel.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -17,7 +18,7 @@ $voitureModel = new Voiture($conn);
 <div class="container d-flex flex-column offset-md-1 mt-5">
     <div class="row justify-content-center mb-4">
         <div class="col-md-12 offset-md-2 mt-5 mb-5 offset-md-3 shadow-sm rounded" style="background-color: #F2F2F2;">
-                <form class="p-3 text-center rounded" action="backend/controllers/covoiturageController.php" method="POST">
+                <form class="p-3 text-center rounded" action="/loads/backend_loader.php" method="POST">
                     <!-- Champs Départ côte à côte -->
                     <div class="row mb-2">
                         <div class="col-md-4 py-2">
@@ -105,7 +106,7 @@ $voitureModel = new Voiture($conn);
                                     } else {
                                         // Sinon, afficher les boutons d'action
                                         echo '<a class = "btn btn-warning text-white" href="index.php?page=editCovoiturages&covoiturage_id=' . $covoiturage['covoiturage_id'] . '">Modifier</a> 
-                                            <a class = "btn btn-danger" href="backend/controllers/covoiturageController.php?annuler=' . $covoiturage['covoiturage_id'] . '">Annuler</a>';
+                                            <a class = "btn btn-danger" href="loads/backend_loader.php?annuler=' . $covoiturage['covoiturage_id'] . '">Annuler</a>';
                                     }
                                 ?>
                                 </td>

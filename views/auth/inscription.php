@@ -8,7 +8,7 @@
             </p>
             <a href="index.php?page=signin">Déjà inscrit ? Connectez-vous ici</a>
             <div class="container mt-2">
-                <form class="p-3 border border-2 border-primary bg-primary rounded" id="SignupForm" action="backend/controllers/register.php" method="POST">
+                <form class="p-3 border border-2 border-primary bg-primary rounded" id="SignupForm" action="loads/signup.php" method="POST">
                     <!-- Champs "Nom" et "Prénom" côte à côte -->
                     <div class="row mb-2">
                         <div class="col-md-6 py-2">

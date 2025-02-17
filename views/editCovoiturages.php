@@ -1,9 +1,9 @@
 <?php
 // Inclure les fichiers nécessaires
-require_once __DIR__ . '/../backend/controllers/covoiturageController.php';
-require_once __DIR__ . '/../backend/database/db.php';
-require_once __DIR__ . '/../backend/models/covoiturageModel.php';
-require_once __DIR__ . '/../backend/models/voitureModel.php';
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/controllers/covoiturageController.php';
+require_once '/home/ecoriders/backend/models/covoiturageModel.php';
+require_once '/home/ecoriders/backend/models/voitureModel.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -16,7 +16,7 @@ $covoiturageModel = new Covoiturage($conn);
 <div class="container d-flex flex-column offset-md-1 mt-5">
     <div class="row justify-content-center mb-4">
         <div class="col-md-12 offset-md-2 mt-5 mb-5 offset-md-3 shadow-sm rounded" style="background-color: #F2F2F2;">
-            <form class="p-3 text-center rounded" action="backend/controllers/covoiturageController.php" method="POST">
+            <form class="p-3 text-center rounded" action="/loads/backend_loader.php" method="POST">
             <input type="hidden" name="covoiturage_id" value="<?= isset($_GET['covoiturage_id']) ? htmlspecialchars($_GET['covoiturage_id']) : '' ?>">
                 <!-- Champs Départ côte à côte -->
                 <div class="row mb-2">

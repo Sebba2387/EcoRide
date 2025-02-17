@@ -1,11 +1,12 @@
 <?php
-require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
-require_once __DIR__ .'/../models/user.php';  // Modèle User
-
 // Vérifier si l'utilisateur est admin ou employé
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
+require_once __DIR__ .'/../models/user.php';  // Modèle User
+
+
 
 
 $userModel = new User($conn);

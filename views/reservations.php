@@ -1,7 +1,8 @@
 <?php
 // Connexion à la base de données et récupération des covoiturages
-require_once __DIR__ . '/../backend/database/db.php';
-require_once __DIR__ . '/../backend/models/reservationModel.php';
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/models/reservationModel.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -55,10 +56,10 @@ $result = $stmt->get_result();
 
                             <?php if ($statut === 'en attente'): ?>
                                 <?php if ($isCreateur): ?>
-                                    <a href="backend/controllers/reservationController.php?accepter=<?= $row['reservation_id'] ?>" class="btn btn-success">Accepter</a>
-                                    <a href="backend/controllers/reservationController.php?refuser=<?= $row['reservation_id'] ?>" class="btn btn-danger">Refuser</a>
+                                    <a href="/loads/book.php?accepter=<?= $row['reservation_id'] ?>" class="btn btn-success">Accepter</a>
+                                    <a href="/loads/book.php?refuser=<?= $row['reservation_id'] ?>" class="btn btn-danger">Refuser</a>
                                 <?php else: ?>
-                                    <a href="backend/controllers/reservationController.php?annuler=<?= $row['reservation_id'] ?>" class="btn btn-warning">Annuler</a>
+                                    <a href="/loads/book.php?annuler=<?= $row['reservation_id'] ?>" class="btn btn-warning">Annuler</a>
                                 <?php endif; ?>
                             <?php elseif ($statut === 'acceptée' && !$avisExists): ?>
                                 <a href="javascript:void(0);" onclick="ouvrirBoiteAvis(<?= $row['reservation_id'] ?>, <?= $row['covoiturage_id'] ?>)" class="btn btn-dark text-primary">Terminer</a>
@@ -75,7 +76,7 @@ $result = $stmt->get_result();
     <div class="modal-content p-4 rounded-3" style="background-color: #F2F2F2;">
         <button type="button" class="btn btn-outline-danger mb-3" onclick="fermerBoiteAvis()">Fermer</button>
         <h5 class="text-center text-dark mb-2">Comment s'est passé ton trajet ?</h5>
-        <form action="backend/controllers/avisController.php" method="POST">
+        <form action="/loads/comments.php" method="POST">
             <!-- Champs cachés -->
             <input type="hidden" name="reservation_id" id="reservation_id">
             <input type="hidden" name="covoiturage_id" id="covoiturage_id">

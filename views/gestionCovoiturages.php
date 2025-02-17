@@ -1,5 +1,6 @@
 <?php 
-require_once __DIR__ . '/../backend/controllers/covoiturageController.php'; 
+require_once '/home/ecoriders/backend/controllers/covoiturageController.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -74,7 +75,7 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
                     <td><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?> ⭐</td>
                     <td><?= htmlspecialchars($covoiturage['prix']) ?>€</td>
                     <td>
-                    <form method="POST" action="backend/controllers/covoiturageController.php" onsubmit="return confirm('Confirmer la suppression ?');">
+                    <form method="POST" action="/loads/admin.php" onsubmit="return confirm('Confirmer la suppression ?');">
                         <input type="hidden" name="covoiturage_id" value="<?= $covoiturage['covoiturage_id']; ?>">
                         <button  type="submit" name="supprimer" class="btn btn-danger" style="background-color: #D9534F !important;">Supprimer</button>
                     </form>

@@ -1,7 +1,9 @@
 <?php
-require_once __DIR__ . '/../backend/database/db.php';  // Connexion à la base de données
-require_once __DIR__ . '/../backend/models/voitureModel.php';  // Modèle Voiture
-require_once __DIR__ . '/../backend/controllers/voitureController.php';  // Controller Voiture
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/models/voitureModel.php';
+require_once '/home/ecoriders/backend/controllers/voitureController.php';
+
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

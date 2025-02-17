@@ -1,5 +1,6 @@
 <?php 
-require_once __DIR__ . '/../backend/controllers/userController.php'; 
+require_once '/home/ecoriders/backend/controllers/userController.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -56,7 +57,7 @@ $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
                     <td><?= htmlspecialchars($user['email']) ?></td>
                     <td><?= htmlspecialchars($user['pseudo']) ?></td>
                     <td>
-                    <form method="POST" action="backend/controllers/userController.php" onsubmit="return confirm('Confirmer la suppression ?');">
+                    <form method="POST" action="/loads/admin.php" onsubmit="return confirm('Confirmer la suppression ?');">
                         <input type="hidden" name="utilisateur_id" value="<?= $user['utilisateur_id']; ?>">
                         <button  type="submit" name="supprimer_utilisateur" class="btn btn-danger" style="background-color: #D9534F !important;">Supprimer</button>
                     </form>

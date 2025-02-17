@@ -34,7 +34,7 @@ $is_logged_in = isset($_SESSION['utilisateur_id']);
                         <ul class="dropdown-menu dropdown-menu-end">
                         <?php if ($is_logged_in): ?>
                             <li><a class="dropdown-item" href="index.php?page=compte" data-show="connected">Mon compte</a></li>
-                            <li><a class="dropdown-item" href="backend/controllers/logout.php" id="btnSignout" data-show="connected">Déconnexion</a></li>
+                            <li><a class="dropdown-item" href="loads/logout.php" id="btnSignout" data-show="connected">Déconnexion</a></li>
                         <?php else: ?>
                             <li><a class="dropdown-item" href="index.php?page=signup" data-show="disconnected">Inscription</a></li>
                             <li><a class="dropdown-item" href="index.php?page=signin" data-show="disconnected">Connexion</a></li>

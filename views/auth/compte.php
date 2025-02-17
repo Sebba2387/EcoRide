@@ -1,6 +1,7 @@
 <?php
-require_once 'backend/database/db.php';  // Connexion à la base de données
-require_once 'backend/models/user.php';  // Modèle User
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/models/user.php';
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -13,7 +14,7 @@ $user = $userModel->getUserById($_SESSION['utilisateur_id']);
     <div class="row justify-content-center mb-4">
         <div class="col-md-10 col-10 mt-5 mb-5">
             <div class="shadow-sm rounded" style="background-color: #F2F2F2;">
-                <form class="mb-5 p-3 rounded" action="backend/controllers/compteController.php" method="POST">
+                <form class="mb-5 p-3 rounded" action="/loads/backend_loader.php" method="POST">
                     <div class="col-md-3 py-2">
                             <input type="text" class="form-control bg-transparent border-0" name="pseudo" id="pseudo" placeholder="Pseudo" style="color: #57F2AA; font-weight: bold; font-size: 2.5rem;"  value="<?= htmlspecialchars($user['pseudo'])?>" required>
                     </div>

@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
 require_once __DIR__ . '/../models/user.php';  // Modèle User
 
+
 //Inscription Utilisateur
 // Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])) {
@@ -21,7 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_utilisateur'])
 
         // Appeler la fonction registerUser()
         if ($userModel->registerUser($nom, $prenom, $email, $password, $pseudo)) {
-            header("Location: ../../index.php?page=signin"); // Redirection vers la connexion
+            echo "<script>alert('Inscription réussie'); 
+                    window.location.href='../../index.php?page=signin';
+                    </script>";// Redirection vers la connexion
             exit();
         } else {
             echo "Erreur lors de l'inscription.";

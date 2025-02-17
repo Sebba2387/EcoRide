@@ -3,7 +3,7 @@
     <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-4 col-12">
             <div class="bg-primary p-4 shadow-sm rounded">
-                <form action="backend/controllers/login.php" method="POST">
+                <form action="/loads/login.php" method="POST">
                     <!-- Champ Email avec icône -->
                     <div class="mb-3 input-group">
                         <span class="input-group-text" id="email-icon"><i class="bi bi-envelope-fill"></i></span>

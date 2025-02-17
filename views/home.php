@@ -1,5 +1,6 @@
 <?php 
-require_once __DIR__ . '/../backend/controllers/covoiturageController.php'; 
+require_once '/home/ecoriders/backend/controllers/covoiturageController.php';
+
 
 // Vérifier si le bouton a été cliqué
 $afficherTableau = isset($_POST['afficher_tableau']) ? true : false;
@@ -77,7 +78,7 @@ $currentDate = date('Y-m-d'); // Date actuelle
                     <td class="text-center"><?= number_format($covoiturage['note_moy'] ?? 0, 1) ?> ⭐</td>
                     <td class="text-center"><?= htmlspecialchars($covoiturage['prix']) ?>€</td>
                     <td class="text-center">
-                    <form action="backend/controllers/reservationController.php" method='POST'>
+                    <form action="/loads/book.php" method='POST'>
                         <input type='hidden' name='covoiturage_id' value="<?php echo $covoiturage['covoiturage_id']; ?>">
                         <button type='submit' name='reserver' class='btn btn-success'>Réserver</button>
                     </form>

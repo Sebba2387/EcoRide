@@ -19,7 +19,7 @@ if (isset($_SESSION['success'])) {
     <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-4 col-12">
             <div class="bg-primary p-4 shadow-sm rounded">
-                <form action="backend/controllers/userController.php" method="POST">
+                <form action="/loads/backend_loader.php" method="POST">
                     <div class="mb-3 input-group">
                         <span class="input-group-text" id="ancienPassword-icon"><i class="bi bi-lock-fill"></i></span>
                         <input type="password" class="form-control" name="ancien_mdp" id="ancienPassword" placeholder="Ancien mot de passe" aria-describedby="ancienPassword-icon" required>

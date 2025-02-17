@@ -1,6 +1,8 @@
 <?php
-require_once 'backend/database/db.php';  // Connexion à la base de données
-require_once 'backend/models/user.php';  // Modèle User
+// require_once 'backend/database/db.php';  // Connexion à la base de données
+// require_once 'backend/models/user.php';  // Modèle User
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/models/user.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -23,7 +25,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 3)): ?>
                 <li class="nav-item mb-2 mt-2">
                     <a href="index.php?" class="sidebar-item nav-link text-white">
-                        <i class="bi bi-suitcase-fill fs-3"></i>
+                        <i class="bi bi-luggage-fill fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">C'est parti !</span>
                     </a>
                 </li>
@@ -58,7 +60,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     </a>
                 </li>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="backend/controllers/logout.php" class="sidebar-item nav-link text-white">
+                    <a href="/loads/logout.php" class="sidebar-item nav-link text-white">
                         <i class="bi bi-arrow-right-square-fill fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Déconnexion</span>
                     </a>
@@ -94,7 +96,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
                 <li class="nav-item mb-2 mt-2">
-                    <a href="backend/controllers/logout.php" class="sidebar-item nav-link text-white">
+                    <a href="/loads/logout.php" class="sidebar-item nav-link text-white">
                         <i class="bi bi-arrow-right-square fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Déconnexion</span>
                     </a>

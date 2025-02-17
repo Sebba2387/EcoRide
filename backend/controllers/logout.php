@@ -2,8 +2,8 @@
 session_start(); // Démarrer la session si ce n'est pas déjà fait
 
 // Inclure le modèle User pour la déconnexion
-require_once '../models/user.php';
-require_once '../database/db.php';  // Connexion à la base de données
+require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
+require_once __DIR__ . '/../models/user.php';  // Modèle User
 
 // Créer une instance de User
 $userModel = new User($conn);

@@ -1,7 +1,10 @@
 <?php
-require_once __DIR__ . '/../backend/database/db.php';  // Connexion à la base de données
-require_once __DIR__ . '/../backend/models/voitureModel.php';  // Modèle User
-require_once __DIR__ . '/../backend/controllers/voitureController.php';  // Controller Voiture
+require_once '/home/ecoriders/backend/database/db.php';
+require_once '/home/ecoriders/backend/models/voitureModel.php';
+require_once '/home/ecoriders/backend/controllers/voitureController.php';
+
+
+
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -16,7 +19,7 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
     <div class="row justify-content-center mb-4">
         <div class="col-md-9 offset-md-2 mt-5 mb-5 offset-md-3 shadow-sm rounded" style="background-color: #F2F2F2;">
             <!-- Formulaire d'ajout de voiture -->
-            <form id="form-voiture" class="mb-5 mt-3 p-3 text-center rounded" action="backend/controllers/voitureController.php" method="POST">
+            <form id="form-voiture" class="mb-5 mt-3 p-3 text-center rounded" action="/loads/backend_loader.php" method="POST">
                 <div class="row mb-2 justify-content-center">
                     <div class="col-md-5 py-2 text-center align-self-end">
                         <input type="text" class="form-control" name="modele" id="modele" placeholder="Modèle*" required>
@@ -64,7 +67,7 @@ $voitures = $voitureModel->getVoituresByUserId($_SESSION['utilisateur_id']);
                         <td><?= $voiture['date_immatriculation']; ?></td>
                         <td>
                             <a class="btn btn-warning text-white" href="index.php?page=editVoitures&id=<?= $voiture['voiture_id']; ?>">Modifier</a>
-                            <a class="btn btn-danger" href="backend/controllers/voitureController.php?delete=<?= $voiture['voiture_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');">Supprimer</a>
+                            <a class="btn btn-danger" href="/loads/backend_loader.php?delete=<?= $voiture['voiture_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');">Supprimer</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -31,7 +31,8 @@
 
     // Si la page nécessite la sidebar, inclure la sidebar
     if ($showSidebar) {
-        include_once "includes/sidebar.php";
+        // include_once "includes/sidebar.php";
+        include_once __DIR__ . '/includes/sideBar.php';
     }
 
     // Inclure la page correspondante

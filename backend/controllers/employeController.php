@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../database/db.php';  // Connexion à la base de données
 require_once __DIR__ . '/../models/user.php';  // Modèle User
 
+
 $userModel = new User($conn);
 // Récupérer la liste des utilisateurs avec role_id = 2
 $employes = $userModel->getEmployesAvecRole2();
@@ -34,9 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ajouter_employe'])) {
         $userModel = new User($conn);
 
         // Appeler la fonction registerEmploye() pour ajouter l'employé
-        if ($userModel->registerEmploye($nom, $prenom, $email, $password, $pseudo, $role_id)) {
-            echo "Inscription réussie !";
-            header("Location: /EcoRide/index.php?page=gestionEmployes"); // Redirection vers la gestion des employés
+        if ($userModel->registerEmploye($nom, $prenom, $email, $password, $pseudo, $role_id)) {           
+            echo "<script>alert('Inscription réussie'); 
+                    window.location.href='../../index.php?page=gestionEmployes';
+                    </script>"; // Redirection vers la gestion des employés
             exit();
         } else {
             echo "Erreur lors de l'ajout de l'employé.";
