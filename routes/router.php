@@ -20,6 +20,7 @@ function getRoute($page) {
         "gestionUtilisateurs"          => ["views/gestionUtilisateurs.php", true],
         "gestionCovoiturages"          => ["views/gestionCovoiturages.php", true],
         "gestionEmployes"          => ["views/gestionEmployes.php", true],
+        "statistiques"          => ["views/statistiques.php", true],
     ];
 
     // Si la page existe dans les routes, on retourne le chemin et l'état de la sidebar

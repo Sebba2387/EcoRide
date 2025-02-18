@@ -11,4 +11,5 @@ require_once __DIR__ . '/../../backend/controllers/voitureController.php';
 require_once __DIR__ . '/../../backend/controllers/covoiturageController.php';
 require_once __DIR__ . '/../../backend/controllers/reservationController.php';
 require_once __DIR__ . '/../../backend/controllers/avisController.php';
+require_once __DIR__ . '/../../backend/controllers/statistiqueController.php';
 ?>

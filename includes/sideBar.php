@@ -68,8 +68,19 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2)): ?>
                 <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-luggage fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">C'est parti !</span>
+                    </a>
+                <li class="nav-item mb-2 mt-2">
+                    <a href="index.php?page=statistiques" class="sidebar-item nav-link text-white">
+                        <i class="bi bi-clipboard-data fs-3"></i>
+                        <span class="textSideBar d-none d-md-inline ms-3">Statistiques</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-2 mt-2">
                     <a href="index.php?page=compte" class="sidebar-item nav-link text-white">
-                        <i class="bi bi-person-fill fs-3"></i>
+                        <i class="bi bi-person fs-3"></i>
                         <span class="textSideBar d-none d-md-inline ms-3">Profil</span>
                     </a>
                 </li>

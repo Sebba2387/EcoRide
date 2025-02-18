@@ -46,7 +46,7 @@ footer {
 /* Bouton de toggle */
 #toggleSidebar {
     position: absolute;
-    top: 8%;
+    margin-top: 40px;
     right: -20px; /* Positionné à la droite de la sidebar */
     transform: translateY(-50%);
     background-color: var(--bs-primary);
