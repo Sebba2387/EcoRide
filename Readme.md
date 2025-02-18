@@ -1,63 +1,72 @@
-# EcoRide
-Cette application de covoiturage met l'accent sur le respect de l'environnement en favorisant des solutions de mobilité durable. Elle encourage l'utilisation de véhicules à faibles émissions de carbone, tels que les voitures électriques, hybrides ou fonctionnant avec des biocarburants. En intégrant des critères écologiques dans son fonctionnement, l'application propose des options de covoiturage optimisées pour réduire l'empreinte carbone des trajets.
+# Manuel de ploiement de l'application de covoiturage EcoRide en local
 
-De plus, des fonctionnalités telles que la mise en avant des conducteurs utilisant des véhicules écologiques, le calcul d'économies en émissions de CO₂ et des conseils pour une conduite écoresponsable viennent renforcer son engagement envers une mobilité respectueuse de l'environnement.
+## Prérequis
+Avant de commencer, il est impératif d'installer les éléments suivants :
+- **PHP** (>=7.x)
+- **MySQL** (ou MariaDB)
+- **Apache** (ou tout autre serveur compatible avec PHP)
+- **Git** (optionnel, pour cloner le projet)
 
-Cette initiative s'inscrit dans une démarche globale visant à promouvoir une transition écologique tout en offrant une solution pratique, économique et conviviale pour les utilisateurs.
+## Étapes d'installation
+### 1. Cloner le projet
+Si vous utilisez Git, clonez le commit
+```sh
+git clone https://github.com/Sebba2387/EcoRide.git
+cd EcoRide
+```
+Sinon, il faut télécharger le projet et l'extraire dans un répertoire accessible par le serveur web.
 
-# Etapes
-+ FrontEnd
-1. Mise en place du système de routage ✅
-2. Instalaltion de la bibliothèque de Boostrap ✅
-3. Configuration de l'environnement de travail ✅
-4. Mise en places des routes ✅
-5. construction des pages HTML/CSS ✅
-6. Ajouter des effets dynamiques : ❓
-    Validation des champs ❌
-    Ajouter des animations (couleur primary aux boutons) ❌
-    Ajouter chronomètre ❌
+### 2. Configurer la base de données
+- Il est nécessaire de créer une base de données MySQL :
+```sql
+CREATE DATABASE ecoriders;
+```
+- Importez le fichier SQL fourni (situé dans `/backend/database/database.sql`) : 
+```sh
+mysql -u root -p ecoriders < backend/database/database.sql
+```
+### 4. Configurer un serveur local
+- Si vous utilisez **Apache** :
+  - Il faut placer le dossier du projet dans le répertoire `htdocs`
+  - Configurez un hôte virtuel si nécessaire
+- Si vous utilisez **PHP intégré**, lancez simplement :
+```sh
+php -S localhost:8000 -t www
+```
 
-+ Backend
-1. Connexion ✅
-2. Déconnexion ✅
-3. Inscription ✅
-4. Profil (Appel des données 'utilisateur')✅
-5. Mise à jour du Profil ✅
-6. Modification du mot de passe ✅
-7. Ajouter d'une voiture ✅
-8. Supprimer d'une voiture ✅
-9. Mise à jour d'une voiture ✅
-10. Ajout d'un covoiturage ✅
-11. Modifier d'un covoiturage ✅
-12. Annuler d'un covoiturage ✅
-13. Rechercher les covoiturages ✅
-14. Faire une réservation ✅
-15. Annuler une réservation ✅
-16. Refuser une réservation ✅
-17. Accepter une réservation ✅
-18. Ajouter un avis ✅
-19. Afficher les avis ✅
-20. Affichage profil Admin  (SideBar)  ✅
-21. Affichage profil Employé  (SideBar)  ✅
-22. Profil Admin & Employé : Afficher les utilisateurs  ✅
-23. Profil Admin & Employé : Supprimer les utilisateurs  ✅
-24. Profil Admin & Employé : Afficher les covoiturages  ✅
-25. Profil Admin & Employé : Supprimer les covoiturages  ✅
-26. Profil Admin : Ajouter les employés  ✅
-26. Profil Admin : Afficher les employés  ✅
-27. Profil Admin : Supprimer les employés  ✅
+### 5. Accéder à l'application
+Il faut ouvrir le navigateur et se rendre sur :
+```
+http://localhost/EcoRide
+```
+Dans le cas d'un serveur PHP intégré
 
-99. Designer la page 404  ✅
-99. Gestion des affichage selon le rôle (conversion en PHP)  ✅
-99. Déploiement (Configuration)   ✅
-99. Ajout de la photo de Profil ❌
-99. Ajout des statistiques Profil : nb réservations, nb covoiturages, nb revenu,
+```
+http://localhost:8000/
+```
 
-99. Problème d'affichage footer à cause du tableau ❌
-99. Message alerte pour la suppression de voiture alors qu'un covoiturages est en cours avec !   ✅
-99. Affichage par nombre de ligne de tableau ❌
-99. Gestion de message de contact ❌
+### 5. Structure du projet
+
+```
+/EcoRide
+│── /backend       # Contient la logique métier et l'accès aux données
+│── /www           # Dossier public (accessible via le navigateur)
+│── /www/auth      # Pages de connexion et d'inscription
+│── /www/assets    # Fichiers CSS, JS et images
+│── /www/views     # Vues HTML/PHP
+│── README.md      # Documentation du projet
+```
 
 
-# Installation
+### 6. Dépannage
+- Il faut vérifier que le serveur MySQL est bien démarré.
+- Il faut vérifier que les droits d'accès aux fichiers sont corrects.
+- Il faut consulter les logs d'Apache/PHP en cas d'erreur.
+
+---
+**Besoin d'aide ? ** Vous pouvez nous contacter via le dépôt GitHub !
+
+
+
+
 
