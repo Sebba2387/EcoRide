@@ -33,15 +33,15 @@ $currentDate = date('Y-m-d'); // Date actuelle
                     <input type="number" min="1" class="form-control flex-grow-1" placeholder="Passagers" name="nombre_places">
                 </div>
                 <div class="input-group">
-                    <span class="input-group-text bg-white"><i class="bi bi-people-fill" style="color: #213A40;"></i></span>
+                    <span class="input-group-text bg-white"><i class="bi bi-ev-front-fill" style="color: #213A40;"></i></span>
                     <input type="text" min="1" class="form-control flex-grow-1" placeholder="Énergie" name="energie">
                 </div>
                 <div class="input-group">
-                    <span class="input-group-text bg-white"><i class="bi bi-people-fill" style="color: #213A40;"></i></span>
+                    <span class="input-group-text bg-white"><i class="bi bi-star-fill" style="color: #213A40;"></i></span>
                     <input type="number" min="1" class="form-control flex-grow-1" placeholder="Note min." name="note">
                 </div>
                 <div class="input-group">
-                    <span class="input-group-text bg-white"><i class="bi bi-people-fill" style="color: #213A40;"></i></span>
+                    <span class="input-group-text bg-white"><i class="bi bi-currency-euro" style="color: #213A40;"></i></span>
                     <input type="number" min="1" class="form-control flex-grow-1" placeholder="Prix max." name="prix">
                 </div>
                 <button type="submit" class="btn btn-dark w-100" name="afficher_tableau" style="color: #57F2AA;">Top départ !</button>

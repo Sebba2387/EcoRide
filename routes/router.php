@@ -7,6 +7,7 @@ function getRoute($page) {
         "presentation"  => ["views/presentation.php", false],
         "services"      => ["views/services.php", false],
         "contact"       => ["views/contact.php", false],
+        "mentionsLegales"          => ["views/mentionsLegales.php", false],
         "signin"        => ["views/auth/connexion.php", false],
         "signup"        => ["views/auth/inscription.php", false],
         "editPassword"        => ["views/auth/editPassword.php", false],

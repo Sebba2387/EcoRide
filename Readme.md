@@ -1,4 +1,4 @@
-# Manuel de ploiement de l'application de covoiturage EcoRide en local
+# Manuel de déploiement de l'application de covoiturage EcoRide en local
 
 ## Prérequis
 Avant de commencer, il est impératif d'installer les éléments suivants :
@@ -51,8 +51,9 @@ http://localhost:8000/
 /EcoRide
 │── /backend       # Contient la logique métier et l'accès aux données
 │── /www           # Dossier public (accessible via le navigateur)
-│── /www/auth      # Pages de connexion et d'inscription
+│── /www/includes  # Partie à inclure sur toutes les vues de notre application
 │── /www/assets    # Fichiers CSS, JS et images
+│── /www/routes    # Système de routages des vues
 │── /www/views     # Vues HTML/PHP
 │── README.md      # Documentation du projet
 ```

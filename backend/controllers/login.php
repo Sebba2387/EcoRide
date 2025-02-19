@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['pseudo'] = $user['pseudo'];
             $_SESSION['role_id'] = $user['role_id'];
 
-            // Redirection vers le dashboard
+            // Redirection vers la page compte
             header("Location: ../../index.php?page=compte");
             exit();
         } else {

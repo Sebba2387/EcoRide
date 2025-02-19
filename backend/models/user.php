@@ -59,10 +59,10 @@ class User {
             }
             $stmt->close();
         }
-        return null; // Aucun utilisateur trouvé
+        return null;
     }
 
-    // Modifier les infos de l'utilisateur à partir du dashboard
+    // Modifier les infos de l'utilisateur à partir du compte
     public function updateUser($utilisateur_id, $nom, $prenom, $pseudo, $email, $telephone, $adresse, $date_naissance) {
         $query = "UPDATE utilisateur SET nom = ?, prenom = ?, pseudo = ?, email = ?, telephone = ?, adresse = ?, date_naissance = ? WHERE utilisateur_id = ?";
         $stmt = $this->conn->prepare($query);

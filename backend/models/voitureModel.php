@@ -31,7 +31,7 @@ class Voiture {
         $stmt->bind_param("i", $voiture_id);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_assoc(); // Retourne la première ligne (unique)
+        return $result->fetch_assoc(); 
     }
 
     // Mettre à jour une voiture

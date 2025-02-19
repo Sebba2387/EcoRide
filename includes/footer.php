@@ -1,7 +1,7 @@
 <footer class="text-center py-3 mt-auto" style="background-color: #D5F2DF;">
     <div class="row">
         <div class="col-12 col-lg-2">
-            <a href="#" style="color: #213A40;">Mentions Légales</a>
+            <a href="index.php?page=mentionsLegales" style="color: #213A40;">Mentions Légales</a>
         </div>
         <div class="col-12 col-lg-3">
             <p>157, Av Victor Hugo, 69006 Lyon<br>Hotline : +33 1 44 35 31 00</p>

@@ -28,7 +28,7 @@ class Reservation {
     
         if ($row = $result->fetch_assoc()) {
             $covoiturage_id = $row['covoiturage_id'];
-            $nombre_places_avant = $row['nombre_places']; // Sauvegarde du nombre de places avant suppression
+            $nombre_places_avant = $row['nombre_places']; 
     
             // Mettre à jour le statut de la réservation
             $query = "UPDATE " . $this->table . " SET statut = 'annulée' WHERE reservation_id = ? AND utilisateur_id = ?";
@@ -89,7 +89,7 @@ class Reservation {
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ii", $reservation_id, $createur_id);
     
-        if (!$stmt->execute()) { // Ajout du "!" pour détecter l'erreur
+        if (!$stmt->execute()) { 
             die("Erreur SQL : " . $stmt->error); // Affiche l'erreur SQL
         }
     
